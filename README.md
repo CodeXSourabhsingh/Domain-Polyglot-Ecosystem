@@ -10,54 +10,49 @@ This repository is the central hub for my clinical and bioinformatics platforms.
 > The source code for the platforms listed below is **proprietary and maintained in private repositories.** This public repository serves as the architectural showcase and documentation hub. All platforms are live and available for demonstration. For commercial deployment, integration, or source code licensing, please contact me directly.
 
 ---
+## LIVE DEMO is inside the tool readme
 
 ## 🚀 The Ecosystem
 
 Click on any project below to view its detailed architecture, screenshots, clinical logic, and live demo link.
 
-### 1. [HEMA-CORE: Hematology & Clinical Triage](./HEMA-CORE/README.md)
+### 1. [HEMA-CORE: Hematology & Clinical Triage](./HEMA_CORE/README.md)
 A unified hematology pipeline that interprets Complete Blood Counts (CBC), calculates ABO/Rh blood compatibility, and evaluates Rh-pregnancy risk.
 *   **Domain:** Hematology, Obstetrics
 *   **Tech:** Python, Pandas, MySQL, Streamlit, Pytest
 *   **Highlights:** Built on WHO (2023) and ACOG guidelines. Includes strict boundary testing to catch `<` vs `<=` clinical errors.
-*   **Live Demo:** [Launch HEMA-CORE] *(Insert Link)*
 
-### 2. [METABO-CORE: Metabolic & PK Dosing](./METABO-CORE/README.md)
+### 2. [METABO-CORE: Metabolic & PK Dosing](./METABO_CORE/README.md)
 A clinical dashboard that merges metabolic risk assessment (glucose/diabetes) with pharmacokinetic dose estimation (Vd, Loading Dose, Maintenance Dose).
 *   **Domain:** Metabolic, Pharmacology
 *   **Tech:** Python, Pandas, MySQL, Streamlit, Matplotlib
 *   **Highlights:** Uses a Single Table Inheritance SQL pattern to log both glucose and PK data in one schema. Implements real clinical parameters for Warfarin, Digoxin, and Gentamicin.
-*   **Live Demo:** [Launch METABO-CORE] *(Insert Link)*
 
-### 3. [BIJA: Fertility Triage Engine](./BIJA/README.md)
+### 3. [BIJA: Fertility Triage Engine]
 An empathetic patient-facing triage tool that translates complex fertility lab reports (AMH, FSH, LH) into actionable, human-readable guidance.
 *   **Domain:** Reproductive Medicine
 *   **Tech:** Python, MySQL, Streamlit, Plotly
 *   **Highlights:** Built on SART/ACOG guidelines. Features an "Education Mode" for patients without labs, and strict human-in-the-loop architecture. Protected by 16 boundary tests.
-*   **Live Demo:** [Launch BIJA] *(Insert Link)*
 
-### 4. [Mutation Trail Explorer: Precision Medicine](./Mutation-Trail/README.md)
+### 4. [Mutation Trail Explorer: Precision Medicine]
 A 4-step clinical research pipeline that traces a genetic mutation from CRISPR targeting to Protein structural impact, and finally to FDA-approved Drug targets.
 *   **Domain:** Genomics, Structural Biology, Drug Discovery
 *   **Tech:** Python, Biopython, Py3Dmol, ChEMBL API, MySQL
 *   **Highlights:** Integrates NCBI, PDB, and ChEMBL APIs. Features BLOSUM62 scoring, Kyte-Doolittle hydrophobicity profiling, and a forced human verification step before API consumption.
-*   **Live Demo:** [Launch Mutation Trail] *(Insert Link)*
 
-### 5. [Molecular Sequence Engine: Pure Python Bioinformatics](./Molecular-Sequence-Engine/README.md)
+### 5. [Molecular Sequence Engine: Pure Python Bioinformatics]
 A unified platform that takes a raw DNA sequence, calculates the GC sliding window, translates it to a protein, and calculates the PCR Tm (thermodynamics). 
 *   **Domain:** Molecular Biology, Genetics
 *   **Tech:** Pure Python (No Biopython), MySQL, Streamlit
 *   **Highlights:** Refactored from raw terminal scripts into a relational Master-Detail architecture. Uses `LEFT JOIN` queries to aggregate data across multiple tables. Implements the Marmur-Doty thermodynamic equation from scratch.
-*   **Live Demo:** [Launch Molecular Engine] *(Insert Link)*
 
-### 6. [EVO-CORE: Evolution Simulation Engine](./EVO-CORE/README.md)
+### 6. [EVO-CORE: Evolution Simulation Engine]
 A computational biology engine that simulates the survival of the fittest. Models bacterial resistance under antibiotic pressure and Mendelian genetic inheritance.
 *   **Domain:** Population Dynamics, Evolutionary Biology
 *   **Tech:** Python, MySQL, Streamlit, Matplotlib
 *   **Highlights:** Runs Monte Carlo simulations (up to 100,000 iterations) to prove the 9:3:3:1 ratio. Features logistic growth models for MRSA under penicillin pressure. 
-*   **Live Demo:** [Launch EVO-CORE] *(Insert Link)*
 
-### 7. [Advanced Bio-Code: The 6-Domain Ecosystem](./Advanced-Bio-Code/README.md)
+### 7. [Advanced Bio-Code: The 6-Domain Ecosystem](./Advanced_Bio_Code/README.md)
 A multi-domain bioinformatics suite covering CRISPR editing, PRISM clinical cohort filtering (10M records processed in <2 mins), Virology tracking, and Microbiome diversity.
 *   **Domain:** Multi-omics, Clinical Trials, Epidemiology
 *   **Tech:** Python, Pandas, Scikit-learn, MySQL
