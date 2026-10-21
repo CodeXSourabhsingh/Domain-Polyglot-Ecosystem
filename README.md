@@ -16,7 +16,7 @@ This repository is the central hub for my clinical and bioinformatics platforms.
 
 Click on any project below to view its detailed architecture, screenshots, clinical logic, and live demo link.
 
-### 1. [HEMA-CORE: Hematology & Clinical Triage](./HEMA_CORE/README.md)
+### 1. [HEMA-CORE: Hematology & Clinical Triage](./HEMA_CORE.md)
 A unified hematology pipeline that interprets Complete Blood Counts (CBC), calculates ABO/Rh blood compatibility, and evaluates Rh-pregnancy risk.
 *   **Domain:** Hematology, Obstetrics
 *   **Tech:** Python, Pandas, MySQL, Streamlit, Pytest
