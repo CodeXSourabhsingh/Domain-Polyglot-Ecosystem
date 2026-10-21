@@ -52,7 +52,7 @@ A computational biology engine that simulates the survival of the fittest. Model
 *   **Tech:** Python, MySQL, Streamlit, Matplotlib
 *   **Highlights:** Runs Monte Carlo simulations (up to 100,000 iterations) to prove the 9:3:3:1 ratio. Features logistic growth models for MRSA under penicillin pressure. 
 
-### 7. [Advanced Bio-Code: The 6-Domain Ecosystem](./Advanced_Bio_Code.md)
+### 7. [Advanced Bio-Code: The 6-Domain Ecosystem](./ADVANCE_BIO_CODE.md)
 A multi-domain bioinformatics suite covering CRISPR editing, PRISM clinical cohort filtering (10M records processed in <2 mins), Virology tracking, and Microbiome diversity.
 *   **Domain:** Multi-omics, Clinical Trials, Epidemiology
 *   **Tech:** Python, Pandas, Scikit-learn, MySQL
