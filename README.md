@@ -81,10 +81,10 @@ Every platform in this ecosystem is built on the same foundational architecture:
 **Sourabh Singh** 
 *Forward Deployed Engineer & Systems Architect*
 
-I am a self-taught engineer who compressed a 4-year CS degree and a bioinformatics master's into 90 days of obsessive execution. I don't just write code; I learn the domain, architect the system, and ship the product. 
+I am a self-taught engineer. I don't just write code; I learn the domain, architect the system, and ship the product. 
 
 *   **LinkedIn:** [Sourabh Singh](https://www.linkedin.com/in/sourabh-singh-7b124934/)
 *   **Architecture Notebook:** [View my handwritten system designs](https://app.notion.com/p/Architecture-Notebook-11-Domains-40-Days-deb76e18923b4b01a7060ea8ec1a92dc)
-*   **Email:** singhsourabh30542@gmail.com
+*   **Email:** sourabh30542dev@gmail.com
 
 *Available for founding engineer roles, custom pipeline development, and commercial software licensing.*
