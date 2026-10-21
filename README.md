@@ -22,7 +22,7 @@ A unified hematology pipeline that interprets Complete Blood Counts (CBC), calcu
 *   **Tech:** Python, Pandas, MySQL, Streamlit, Pytest
 *   **Highlights:** Built on WHO (2023) and ACOG guidelines. Includes strict boundary testing to catch `<` vs `<=` clinical errors.
 
-### 2. [METABO-CORE: Metabolic & PK Dosing](./METABO_CORE/README.md)
+### 2. [METABO-CORE: Metabolic & PK Dosing](./METABO_CORE.md)
 A clinical dashboard that merges metabolic risk assessment (glucose/diabetes) with pharmacokinetic dose estimation (Vd, Loading Dose, Maintenance Dose).
 *   **Domain:** Metabolic, Pharmacology
 *   **Tech:** Python, Pandas, MySQL, Streamlit, Matplotlib
@@ -52,7 +52,7 @@ A computational biology engine that simulates the survival of the fittest. Model
 *   **Tech:** Python, MySQL, Streamlit, Matplotlib
 *   **Highlights:** Runs Monte Carlo simulations (up to 100,000 iterations) to prove the 9:3:3:1 ratio. Features logistic growth models for MRSA under penicillin pressure. 
 
-### 7. [Advanced Bio-Code: The 6-Domain Ecosystem](./Advanced_Bio_Code/README.md)
+### 7. [Advanced Bio-Code: The 6-Domain Ecosystem](./Advanced_Bio_Code.md)
 A multi-domain bioinformatics suite covering CRISPR editing, PRISM clinical cohort filtering (10M records processed in <2 mins), Virology tracking, and Microbiome diversity.
 *   **Domain:** Multi-omics, Clinical Trials, Epidemiology
 *   **Tech:** Python, Pandas, Scikit-learn, MySQL
