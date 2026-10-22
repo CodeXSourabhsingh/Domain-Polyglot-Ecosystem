@@ -4,6 +4,8 @@ BIJA is an evidence-informed clinical decision support tool for reproductive end
 
 The system is designed to support education and clinical triage, not to replace a physician or provide individualized medical advice
 
+<img width="1379" height="876" alt="Screenshot 2026-10-20 235152" src="https://github.com/user-attachments/assets/b536341d-13f3-46c3-a0f6-0a5205e92d2c" />
+
 ### The Philosophy of Bīja
 
 *Bīja* is the Sanskrit word for "seed." It represents the origin, the genetics, and the potential for life. We chose this name because a fertility journey is not a math equation—it is the most vulnerable, human experience a couple can face. BIJA was built to treat patients with the dignity and empathy they deserve, translating cold lab reports into a language of hope and action.
