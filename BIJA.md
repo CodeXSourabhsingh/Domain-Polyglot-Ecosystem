@@ -2,21 +2,21 @@
 
 ## Live Demo
 
-BIJA is ready to explore in a browser with Streamlit.
+Try the live BIJA app here:
 
-- Launch the app locally:
+https://bio-pipelines-dwdstyhyqtljc3xaxkj3zv.streamlit.app/
+
+Launch locally with:
 
 ```bash
 streamlit run BIJA_app.py
 ```
 
-- Open the app in your browser at:
+Then open:
 
 ```text
 http://localhost:8501
 ```
-
-This is the quickest way to preview the BIJA workflow, fertility risk interpretation, and recommendation experience in a live session.
 
 BIJA is a clinical decision-support prototype designed to help patients and clinicians interpret common fertility lab values in context. The system translates hormone and semen analysis results into p[...]
 
@@ -311,4 +311,3 @@ This document is intended to describe the project clearly and accurately. It sho
 BIJA is a thoughtful and clinically relevant project that combines patient empathy, educational value, and decision support. Its strongest asset is not just the logic—it is the restraint built aroun[...]
 
 Built by Sourabh Singh — Forward Deployed Engineer & System Architect.
-
