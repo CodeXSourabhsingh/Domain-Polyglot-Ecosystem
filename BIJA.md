@@ -4,6 +4,10 @@ BIJA is an evidence-informed clinical decision support tool for reproductive end
 
 The system is designed to support education and clinical triage, not to replace a physician or provide individualized medical advice
 
+### Visualizing the Data (Patient-Facing UI)
+BIJA translates cold lab numbers into clear, empathetic visual zones. 
+*The AMH chart visually maps patient results against clinical reference bands (Low Reserve, Normal, PCOS Risk).*
+
 <img width="1379" height="876" alt="Screenshot 2026-10-20 235152" src="https://github.com/user-attachments/assets/b536341d-13f3-46c3-a0f6-0a5205e92d2c" />
 
 ### The Philosophy of Bīja
