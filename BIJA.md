@@ -180,17 +180,6 @@ pip install -r requirements.txt
 streamlit run BIJA_app.py
 ```
 
-## ✨ Recommended Improvements to the Existing Doc
-
-If you want to improve the current version further, here are the highest-value changes:
-
-- 🔗 Update all repo URLs so they match the actual project
-- 🧑‍💻 Add a short “Who this is for” section
-- 🧭 Add a “How to use BIJA” section with a sample workflow
-- 🛡️ Add a clearer list of protected clinical safety boundaries
-- 📝 Add a note describing known assumptions and exclusions
-- 🗺️ Add a “Roadmap” or “Future work” section
-- 📚 Add a reference section for WHO/SART/ACOG guidance if used
 
 ## 🧩 Closing
 
