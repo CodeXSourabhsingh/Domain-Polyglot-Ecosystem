@@ -142,7 +142,13 @@ Current validation includes:
 <img width="1883" height="722" alt="Screenshot 2026-10-18 144817" src="https://github.com/user-attachments/assets/b9cab003-c8a0-414e-a054-8b04d6b9b784" />
 <img width="1909" height="673" alt="Screenshot 2026-10-22 222214" src="https://github.com/user-attachments/assets/b6ad42dd-f9b7-4300-a49e-2d88d8d6922d" />
 
+The core calculation engine is validated using a Pytest suite. The current suite contains **20 boundary tests** covering standard cases, severe clinical outliers, and exact threshold edges (e.g., AMH = 1.0, Age = 39, Sperm Motility = 40%). 
 
+Crucially, the suite includes specific edge-case audits to ensure clinical safety:
+*   **Extreme Outliers:** Validates severe PCOS risk (AMH > 15) and Azoospermia (Sperm count = 0).
+*   **Zero-Input Defense:** Ensures the engine handles `0.0` inputs gracefully without throwing a `ZeroDivisionError`.
+*   **Stacked Severe Cases:** Confirms that when both partners have severe factors (e.g., advanced maternal age + severe male factor), the logic correctly recommends combined therapies (IVF + ICSI).
+*   
 - ✅ 20 pytest tests
 - ✅ boundary checks for AMH
 - ✅ morphology thresholds
