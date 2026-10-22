@@ -148,6 +148,45 @@ Current validation includes:
 - ✅ PGT logic
 - ✅ core reproductive decision rules
 
+- ## 📊 Clinical Reference Ranges & Thresholds
+
+The BIJA calculation engine uses the following evidence-based thresholds (SART/CDC, WHO 2021). These are the exact numbers powering the decision tree and the visual reference bands.
+
+### 1. Female Hormonal Panel
+
+| Biomarker | Low | Normal | High | Clinical Implication |
+| :--- | :--- | :--- | :--- | :--- |
+| **AMH** (ng/mL) | `< 1.0` | `1.0 - 4.0` | `> 4.0` | Low = Diminished Ovarian Reserve (DOR). High = PCOS risk. |
+| **FSH** (mIU/mL) | `< 3.5` | `3.5 - 12.5` | `> 12.5` | High = Poor ovarian response / DOR. |
+| **LH** (mIU/mL) | `< 2.4` | `2.4 - 12.6` | `> 12.6` | High LH often correlates with PCOS. |
+| **AFC** (Antral Follicle Count) | `< 5` | `5 - 15+` | - | Low count indicates DOR. |
+| **TSH** (mIU/L) | `< 0.4` | `0.4 - 4.0` | `> 4.0` | Thyroid dysfunction impairs ovulation. |
+| **Prolactin** (ng/mL) | - | `< 25` | `> 25` | High prolactin inhibits ovulation. |
+
+### 2. Male Panel (WHO 2021 Semen Analysis)
+
+| Biomarker | Abnormal Threshold | Normal Range |
+| :--- | :--- | :--- |
+| **Sperm Count** (M/mL) | `< 15` | `>= 15` |
+| **Total Motility** (%) | `< 40` | `>= 40` |
+| **Morphology** (%) | `< 4` | `>= 4` |
+| **Semen Volume** (mL) | `< 1.4` | `>= 1.4` |
+| **Semen pH** | `< 7.2` | `>= 7.2` |
+
+### 3. Age & Clinical History Triggers
+
+| Trigger | Threshold / Status | Clinical Action |
+| :--- | :--- | :--- |
+| **Maternal Age** | `>= 35` | Escalate to specialist after **6 months** of trying (instead of 1 year). |
+| **Maternal Age** | `>= 40` | Absolute indication for **IVF**. Do not wait. |
+| **Tubal Factor** | Blocked tubes = `Yes` | Absolute indication for **IVF** (IUI is impossible). |
+| **Genetics** | Known carrier = `Yes` | Indication for **IVF + PGT** (Preimplantation Genetic Testing). |
+
+**The SART Success Probability Data:**
+*   **IVF Live Birth Rate (per cycle):** `<35` (53.2%), `35-37` (39.9%), `38-40` (26.2%), `41-42` (13.2%), `>42` (4.1%).
+*   **IUI Live Birth Rate (per cycle):** `<35` (10-20%), `35-37` (8-15%), `38-40` (5-10%), `>40` (<5%).
+*   **Donor Egg Live Birth Rate:** 51.3% - 63.6%.
+
 Run the test suite with:
 
 ```bash
