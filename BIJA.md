@@ -1,8 +1,26 @@
 # 🩺 BIJA — Clinical Fertility Triage
 
-BIJA is a clinical decision-support prototype designed to help patients and clinicians interpret common fertility lab values in context. The system translates hormone and semen analysis results into plain-language reference bands and likely next-step pathways while clearly distinguishing education and triage from medical diagnosis.
+## Live Demo
 
-BIJA is intended to support patient education, triage awareness, and clinical workflow understanding. It is not a substitute for physician evaluation, individualized treatment planning, or medical diagnosis.
+BIJA is ready to explore in a browser with Streamlit.
+
+- Launch the app locally:
+
+```bash
+streamlit run BIJA_app.py
+```
+
+- Open the app in your browser at:
+
+```text
+http://localhost:8501
+```
+
+This is the quickest way to preview the BIJA workflow, fertility risk interpretation, and recommendation experience in a live session.
+
+BIJA is a clinical decision-support prototype designed to help patients and clinicians interpret common fertility lab values in context. The system translates hormone and semen analysis results into p[...]
+
+BIJA is intended to support patient education, triage awareness, and clinical workflow understanding. It is not a substitute for physician evaluation, individualized treatment planning, or medical dia[...]
 
 ## At a Glance
 
@@ -14,7 +32,7 @@ BIJA is intended to support patient education, triage awareness, and clinical wo
 
 ## Why BIJA Exists
 
-Fertility assessment can be emotionally intense and medically confusing. Patients often receive lab results without enough context to understand what the numbers mean or what their next steps should be. In many settings, reproductive healthcare communication is fragmented: lab values are presented in isolation, and the distinction between education, screening, and diagnosis is not always clear.
+Fertility assessment can be emotionally intense and medically confusing. Patients often receive lab results without enough context to understand what the numbers mean or what their next steps should b[...]
 
 BIJA addresses this by:
 
@@ -26,7 +44,7 @@ BIJA addresses this by:
 
 ## The Philosophy of Bīja
 
-*Bīja* is the Sanskrit word for “seed.” It represents origin, potential, and the beginning of life. We chose this name because a fertility journey is not merely a mathematical exercise—it is deeply personal, biologically variable, and often emotionally burdensome.
+*Bīja* is the Sanskrit word for “seed.” It represents origin, potential, and the beginning of life. We chose this name because a fertility journey is not merely a mathematical exercise—it is de[...]
 
 BIJA aims to bring clarity to that complexity without pretending to replace clinical judgment.
 
@@ -145,7 +163,7 @@ BIJA does not store personally identifiable information such as:
 - 📞 phone numbers
 - 📬 contact details
 
-It stores anonymized clinical inputs and resulting recommendations for audit or operational analysis where needed. This is intended to support quality review without exposing sensitive patient information.
+It stores anonymized clinical inputs and resulting recommendations for audit or operational analysis where needed. This is intended to support quality review without exposing sensitive patient informa[...]
 
 ## Validation and Testing
 
@@ -175,7 +193,7 @@ Validation checklist:
 
 ## Clinical Reference Ranges and Thresholds
 
-The BIJA calculation engine uses the following evidence-based thresholds. These are reference-oriented values intended to support interpretation and educational triage, not individualized diagnosis. Actual clinical ranges may vary by assay, lab method, and patient context.
+The BIJA calculation engine uses the following evidence-based thresholds. These are reference-oriented values intended to support interpretation and educational triage, not individualized diagnosis. A[...]
 
 ### 1. Female Hormonal Panel
 
@@ -258,7 +276,7 @@ BIJA is informed by commonly cited reproductive medicine and fertility guideline
 - 🧬 SART (Society for Assisted Reproductive Technology) benchmarks for ART decision support and treatment pathway awareness
 - 👩‍⚕️ ACOG and ASRM guidance on infertility evaluation, ovulation induction, and reproductive endocrinology practice standards
 
-These references provide the broader clinical context behind BIJA's triage logic, while the tool itself remains a decision-support educational implementation rather than a formal diagnosis or treatment recommendation.
+These references provide the broader clinical context behind BIJA's triage logic, while the tool itself remains a decision-support educational implementation rather than a formal diagnosis or treatmen[...]
 
 ## Quick Start
 
@@ -283,7 +301,7 @@ streamlit run BIJA_app.py
 
 ## Closing
 
-BIJA is a thoughtful and clinically relevant project that combines patient empathy, educational value, and decision support. Its strongest asset is not just the logic—it is the restraint built around it: it informs, flags, and educates without pretending to replace judgment.
+BIJA is a thoughtful and clinically relevant project that combines patient empathy, educational value, and decision support. Its strongest asset is not just the logic—it is the restraint built aroun[...]
 
 Built by Sourabh Singh — Forward Deployed Engineer & System Architect.
 
