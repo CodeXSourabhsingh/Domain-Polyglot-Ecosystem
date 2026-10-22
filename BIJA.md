@@ -1,102 +1,199 @@
 # 🩺 BIJA — Clinical Fertility Triage
 
-**BIJA** is an evidence-based clinical decision support tool for reproductive endocrinology. It bridges the gap between cold lab reports and human anxiety by providing a two-tier system: an **Education Layer** for patients without lab results, and a **Calculation Engine** for those with lab data.
+BIJA is an evidence-informed clinical decision support tool for reproductive endocrinology and fertility assessment. It helps bridge the gap between raw laboratory values and patient understanding by translating complex fertility data into plain-language triage guidance.
 
-It is built to flag risk and guide next steps, not to replace a physician.
+The system is designed to support education and clinical triage, not to replace a physician or provide individualized medical advice.
 
-## 🧠 The Philosophy: Human-in-the-Loop
+## Why BIJA Exists
 
-Fertility is a highly sensitive, emotionally loaded domain. Automating medical advice is dangerous. BIJA is built around three strict design principles:
+Fertility assessment can be emotionally intense and medically confusing. Patients often receive lab results without enough context to understand what the numbers mean or what their next steps should be.
 
-1. **The "Waiting Room" (Empathy Layer):** Before asking for any numbers, the UI acknowledges the user's stress. *"Talking about fertility can be stressful... take a breath."*
-2. **Flags, Does Not Prescribe:** The tool uses SART/CDC guidelines to suggest the next clinical step (e.g., IUI vs. IVF), but explicitly states: *"This tool is for triage and education only. It is not a medical prescription."*
-3. **Male Factor Inclusion:** Fertility tech often ignores the male side. BIJA explicitly prompts for semen analysis, morphology, motility, and varicocele history, because male factors account for ~50% of cases.
+BIJA addresses this by:
+- helping users interpret key fertility markers
+- highlighting risk patterns based on clinical thresholds
+- surfacing likely next-step recommendations
+- separating education from diagnosis
+- incorporating both female and male fertility factors
 
+## Design Principles
 
-🏗️ The Two-Tab Architecture: Education vs. Calculation
+BIJA is intentionally designed around a human-in-the-loop model:
 
-A patient landing on a medical tool is usually in one of two states:
+1. Empathy first
+   Before asking for clinical inputs, the interface acknowledges stress and uncertainty.
 
-1. "I have a problem and I'm scared, but I don't have my lab results yet."
-2. "I just got my lab results, but I don't know what they mean."
+2. Flagging, not prescribing
+   The tool uses reference-based logic and guideline-informed patterns to suggest likely clinical pathways, but it clearly states that it is not a medical diagnosis.
 
-If you build a tool that immediately demands lab values, the first type of user will bounce. To solve this, BIJA is built with a two-tier split:
+3. Inclusion of male factor fertility
+   Male factors are often underrepresented in fertility tools. BIJA explicitly evaluates parameters such as sperm count, motility, morphology, and history of varicocele where relevant.
 
-· Tab 1: Patient Education (The "No Data" State): 
-  Instead of asking for numbers, this tab asks contextual questions (age, cycle length, medical history). It then generates a personalized action plan, telling the user exactly which tests to ask their doctor for (e.g., "Ask for a Basic Fertility Panel: AMH, Day 3 FSH, Pelvic Ultrasound"). It lowers anxiety and gives the user a roadmap.
-  
-· Tab 2: Clinical Calculation Engine (The "Data" State):
-  Once the user has their lab results, they switch to this tab. It uses the exact SART/CDC clinical thresholds to run the ART decision tree, flagging whether they are a candidate for IUI, IVF, or ICSI.
+## Intended Use
 
-The Product Philosophy: The mode is a data decision. If the user has no data, the tool educates. If the user has data, the tool calculates. This prevents the user from feeling overwhelmed while ensuring that when they do get their tests done, the tool is waiting to interpret them.
+BIJA is intended for:
+- patient education
+- triage support
+- clinical workflow awareness
+- understanding fertility lab patterns in context
 
-## ⚙️ Architecture
+BIJA is not intended for:
+- replacing a physician
+- giving individualized treatment plans
+- autonomous medical decision-making
+- use as a substitute for specialist evaluation
 
-The application is built using a modular, 3-file pipeline architecture to separate the UI, the clinical logic, and the database.
+## System Architecture
 
-*   **`BIJA_app.py` (UI Layer):** Built with Streamlit. Uses `st.session_state` to ensure that changing a slider does not wipe the patient's results, requiring them to click "Generate Report" again.
-*   **`BIJA_calculation.py` (Engine Layer):** Pure Python. No UI, no database. Takes inputs, runs the ART (Assisted Reproductive Technology) decision tree, and returns a dictionary.
-*   **`BIJA_MYSQL.py` (Persistence Layer):** Safely connects to MySQL (with a 3-second timeout for cloud compatibility) and logs the session type (Education vs. Calculation) to a single unified table.
+The application is built using a modular three-layer architecture:
 
-## 🧬 Clinical Logic & Decision Tree
+- BIJA_app.py — User interface layer
+  - Built with Streamlit
+  - Manages user interaction, session state, and report generation
+  - Keeps the experience readable and guided
 
-The Calculation Engine maps lab values to clinical guidelines (WHO 2021, SART, ACOG).
+- BIJA_calculation.py — Clinical logic layer
+  - Pure Python business logic
+  - Accepts fertility inputs and applies ART/clinical decision rules
+  - Returns a structured recommendation dictionary
 
-*   **Genetics:** If a known genetic carrier is detected → **IVF + PGT**.
-*   **Absolute IVF Indications:** Blocked tubes, Diminished Ovarian Reserve (AMH < 1.0, FSH > 15, AFC < 5), or advanced maternal age (>= 40) → **Standard IVF**.
-*   **Male Factor:** Low sperm count (< 15M/mL), low motility (< 40%), or abnormal morphology (< 4%) → **IVF + ICSI** (Combined approach if female factors are also present).
-*   **Ovulatory Dysfunction:** PCOS signs (LH:FSH > 2), irregular cycles, high TSH (> 4.0), or high prolactin (> 25) → **IUI + Ovulation Induction** (only if no absolute IVF indications are present).
+- BIJA_MYSQL.py — Persistence layer
+  - Connects to MySQL
+  - Logs anonymized session metadata and output recommendations
+  - Uses a single unified table for auditing and telemetry
 
-## 📊 Visualizations
+This separation helps keep the front end, clinical logic, and data persistence independent and easier to validate.
 
-The dashboard utilizes **Matplotlib** to render dynamic, color-coded reference band charts for the three most critical continuous variables:
-*   **AMH (ng/mL):** Red (Low Reserve), Green (Normal), Yellow (PCOS Risk).
-*   **FSH (mIU/mL):** Yellow (Low), Green (Normal), Red (High / DOR Risk).
-*   **LH (mIU/mL):** Yellow (Low), Green (Normal), Red (High / PCOS Risk).
+## Clinical Logic Overview
 
-## 🧪 Validation (Testing)
+The decision engine maps patient factors to fertility triage guidance using evidence-informed thresholds and guideline-based logic.
 
-The core logic is protected by a suite of automated boundary tests. In clinical software, a boundary error isn't just a bug—it's a risk to a patient's family planning.
+Key pathways include:
 
-*   **16 Pytest tests** verify the exact clinical thresholds.
-*   Tests cover the precise boundaries for AMH, sperm morphology, motility, and PGT logic.
-*   Run the tests with:
-    ```bash
-    python -m pytest test_BIJA.py -v
-    ```
+- Genetic risk
+  - Known genetic carrier status may indicate IVF + PGT
 
-## 🛠️ Tech Stack
+- Absolute IVF indications
+  - blocked tubes
+  - diminished ovarian reserve
+  - advanced maternal age
+  - other clinically significant female-factor indications
 
-*   **Language:** Python 3
-*   **Frontend:** Streamlit
-*   **Data Visualization:** Matplotlib, Pandas
-*   **Database:** MySQL
-*   **Testing:** Pytest, unittest.mock
+- Male factor considerations
+  - low sperm count
+  - low motility
+  - abnormal morphology
+  - possible need for IVF + ICSI when indicated
 
-## 🚧 Limitations & Disclaimer
+- Ovulatory and endocrine dysfunction
+  - PCOS-related patterns
+  - irregular cycles
+  - thyroid dysfunction
+  - prolactin elevation
+  - possible IUI + ovulation induction pathways when clinically appropriate
 
-*   **Not Medical Advice:** BIJA provides population averages based on national data. It is a reference implementation for triage and education.
-*   **Requires Lab Data:** The Calculation Engine requires the user to have already completed their blood panels and semen analysis.
-*   **Adult Ranges Only:** The reference ranges are strictly for adults.
-*   **Data Privacy:** The app does not store PII (Personally Identifiable Information) like names or phone numbers. It only logs anonymized lab values and the resulting recommendation for audit purposes.
+The tool does not attempt to replace clinician judgment; it highlights probable next steps for review.
 
-## 🚀 Run Locally
+## Visual Interpretation
+
+BIJA includes dynamic visualizations to make fertility trends easier to understand. Charts highlight reference bands for key continuous variables:
+
+- AMH
+  - low reserve
+  - normal range
+  - PCOS risk zone
+
+- FSH
+  - low
+  - normal
+  - high / diminished ovarian reserve risk
+
+- LH
+  - low
+  - normal
+  - high / PCOS risk
+
+These visualizations are designed to support interpretation rather than diagnosis.
+
+## Data and Privacy
+
+BIJA does not store personally identifiable information such as:
+- names
+- phone numbers
+- contact details
+
+It stores anonymized clinical inputs and resulting recommendations for audit or operational analysis where needed. This is intended to support quality review without exposing sensitive patient information.
+
+## Validation and Testing
+
+The clinical engine is protected by automated tests covering key threshold boundaries.
+
+Current validation includes:
+- 16 pytest tests
+- boundary checks for AMH
+- morphology thresholds
+- motility thresholds
+- PGT logic
+- core reproductive decision rules
+
+Run the test suite with:
+
+```bash
+python -m pytest test_BIJA.py -v
+```
+
+## Technology Stack
+
+- Language: Python 3
+- Frontend: Streamlit
+- Visualization: Matplotlib, Pandas
+- Database: MySQL
+- Testing: Pytest, unittest.mock
+
+## Limitations
+
+BIJA is a reference implementation and has important limitations:
+
+- It is not medical advice
+- It relies on input lab data and clinical context
+- It is designed for adult populations
+- It uses reference-based patterns and may not reflect every patient scenario
+- It should not replace specialist evaluation or care pathways
+
+## Quick Start
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/CodeXSourabhsingh/BIJA.git
-   cd BIJA
-   ```
+
+```bash
+git clone https://github.com/CodeXSourabhsingh/Domain-Polyglot-Ecosystem.git
+cd Domain-Polyglot-Ecosystem
+```
 
 2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the app:
-   ```bash
-   streamlit run BIJA_app.py
-   ```
 
----
+```bash
+pip install -r requirements.txt
+```
+
+3. Run the app:
+
+```bash
+streamlit run BIJA_app.py
+```
+
+## Recommended Improvements to the Existing Doc
+
+If you want to improve the current version further, here are the highest-value changes:
+
+- Update all repo URLs so they match the actual project
+- Add a short “Who this is for” section
+- Add a “How to use BIJA” section with a sample workflow
+- Add a clearer list of protected clinical safety boundaries
+- Add a note describing known assumptions and exclusions
+- Add a “Roadmap” or “Future work” section
+- Add a reference section for WHO/SART/ACOG guidance if used
+
+## Closing
+
+BIJA is a thoughtful and clinically relevant project that combines patient empathy, educational value, and decision support. Its strongest asset is not just the logic—it is the restraint built around it. The documentation should continue to emphasize that the tool is for triage, education, and informed discussion, not a substitute for care.
 
 Built by Sourabh Singh — Forward Deployed Engineer & System Architect.
