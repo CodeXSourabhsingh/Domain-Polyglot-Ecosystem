@@ -159,6 +159,16 @@ BIJA is a reference implementation and has important limitations:
 - 🧭 It uses reference-based patterns and may not reflect every patient scenario
 - 🩺 It should not replace specialist evaluation or care pathways
 
+## 📚 Reference Guidance
+
+BIJA is informed by commonly cited reproductive medicine and fertility guideline frameworks, including:
+
+- 🌍 WHO fertility and reproductive health guidance for interpreting laboratory values and clinical context.
+- 🧬 SART (Society for Assisted Reproductive Technology) benchmarks for ART decision support and treatment pathway awareness.
+- 👩‍⚕️ ACOG and ASRM guidance on infertility evaluation, ovulation induction, and reproductive endocrinology practice standards.
+
+These references provide the broader clinical context behind BIJA's triage logic, while the tool itself remains a decision-support educational implementation rather than a formal diagnosis or treatment protocol.
+
 ## 🚀 Quick Start
 
 1. ⬇️ Clone the repository:
@@ -179,7 +189,6 @@ pip install -r requirements.txt
 ```bash
 streamlit run BIJA_app.py
 ```
-
 
 ## 🧩 Closing
 
