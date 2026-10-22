@@ -2,7 +2,11 @@
 
 BIJA is an evidence-informed clinical decision support tool for reproductive endocrinology and fertility assessment. It helps bridge the gap between raw laboratory values and patient understanding by translating complex fertility data into plain-language triage guidance.
 
-The system is designed to support education and clinical triage, not to replace a physician or provide individualized medical advice.
+The system is designed to support education and clinical triage, not to replace a physician or provide individualized medical advice
+
+### The Philosophy of Bīja
+
+*Bīja* is the Sanskrit word for "seed." It represents the origin, the genetics, and the potential for life. We chose this name because a fertility journey is not a math equation—it is the most vulnerable, human experience a couple can face. BIJA was built to treat patients with the dignity and empathy they deserve, translating cold lab reports into a language of hope and action.
 
 ## 💡 Why BIJA Exists
 
