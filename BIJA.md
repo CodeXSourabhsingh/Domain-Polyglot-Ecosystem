@@ -6,17 +6,6 @@ Try the live BIJA app here:
 
 https://bio-pipelines-dwdstyhyqtljc3xaxkj3zv.streamlit.app/
 
-Launch locally with:
-
-```bash
-streamlit run BIJA_app.py
-```
-
-Then open:
-
-```text
-http://localhost:8501
-```
 
 BIJA is a clinical decision-support prototype designed to help patients and clinicians interpret common fertility lab values in context. The system translates hormone and semen analysis results into p[...]
 
