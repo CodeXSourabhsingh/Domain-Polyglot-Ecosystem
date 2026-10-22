@@ -138,6 +138,9 @@ It stores anonymized clinical inputs and resulting recommendations for audit or 
 The clinical engine is protected by automated tests covering key threshold boundaries.
 
 Current validation includes:
+
+<img width="1883" height="722" alt="Screenshot 2026-10-18 144817" src="https://github.com/user-attachments/assets/b9cab003-c8a0-414e-a054-8b04d6b9b784" />
+
 - ✅ 16 pytest tests
 - ✅ boundary checks for AMH
 - ✅ morphology thresholds
