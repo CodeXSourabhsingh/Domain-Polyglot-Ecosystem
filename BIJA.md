@@ -140,8 +140,10 @@ The clinical engine is protected by automated tests covering key threshold bound
 Current validation includes:
 
 <img width="1883" height="722" alt="Screenshot 2026-10-18 144817" src="https://github.com/user-attachments/assets/b9cab003-c8a0-414e-a054-8b04d6b9b784" />
+<img width="1909" height="673" alt="Screenshot 2026-10-22 222214" src="https://github.com/user-attachments/assets/b6ad42dd-f9b7-4300-a49e-2d88d8d6922d" />
 
-- ✅ 16 pytest tests
+
+- ✅ 20 pytest tests
 - ✅ boundary checks for AMH
 - ✅ morphology thresholds
 - ✅ motility thresholds
