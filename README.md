@@ -76,7 +76,7 @@ Every platform in this ecosystem is built on the same foundational architecture:
 **Sourabh Singh** 
 *Forward Deployed Engineer & Systems Architect*
 
-I am a self-taught engineer. I don't just write code; I learn the domain, architect the system, and ship the product. 
+I am a self-taught engineer 12th pass (PCB) No degree, no bootcamp I don't just write code; I learn the domain, architect the system, and ship the product. That's the job.
 
 *   **LinkedIn:** [Sourabh Singh](https://www.linkedin.com/in/sourabh-singh-7b124934/)
 *   **Architecture Notebook:** [View my handwritten system designs](https://app.notion.com/p/Architecture-Notebook-11-Domains-40-Days-deb76e18923b4b01a7060ea8ec1a92dc)
