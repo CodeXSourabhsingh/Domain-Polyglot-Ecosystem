@@ -28,7 +28,7 @@ A clinical dashboard that merges metabolic risk assessment (glucose/diabetes) wi
 *   **Tech:** Python, Pandas, MySQL, Streamlit, Matplotlib
 *   **Highlights:** Uses a Single Table Inheritance SQL pattern to log both glucose and PK data in one schema. Implements real clinical parameters for Warfarin, Digoxin, and Gentamicin.
 
-### 3. [BIJA: Fertility Triage Engine]
+### 3. [BIJA: Fertility Triage Engine](./BIJA.md)
 An empathetic patient-facing triage tool that translates complex fertility lab reports (AMH, FSH, LH) into actionable, human-readable guidance.
 *   **Domain:** Reproductive Medicine
 *   **Tech:** Python, MySQL, Streamlit, Plotly
