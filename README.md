@@ -19,7 +19,6 @@ Click on any project below to view its detailed architecture, screenshots, clini
 
 These are the individual engines. They are deployed on Streamlit and the code is available in the linked repositories.
 
-(Note: Add your Streamlit links here when you are ready)
 
 1. BIJA: Fertility Triage
 
