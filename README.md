@@ -47,8 +47,11 @@ It is a unified Master-Detail schema that connects every domain using a master p
 Because this is proprietary IP, the merged code is kept in a private repository.
 
 · Mutation Trail Explorer: CRISPR simulation → 3D Protein (Py3Dmol) → ChEMBL Drug Interactions.
+
 · EPI-CORE: Viral immune escape + Microbiome Shannon Diversity combined risk.
+
 · EVO-CORE: Bacterial resistance (Fleming) + Mendelian inheritance (Mendel) simulations.
+
 · Molecular Sequence Engine: PCR Tm calculations, GC sliding windows, RNA translation.
 
 If you would like a live demo of the Megazone or the proprietary engines, please reach out via LinkedIn.
@@ -60,7 +63,11 @@ If you would like a live demo of the Megazone or the proprietary engines, please
 I don't just build; I validate. Every engine is tested against the worst-case biological scenarios (NaNs, SD=0, extreme outliers, negative inputs).
 
 Current Test Coverage: 85+ Passing Pytest Cases
-(Screenshot of terminal with green text goes here)
+
+<img width="1910" height="706" alt="Screenshot 2026-10-23 235541" src="https://github.com/user-attachments/assets/311b7c15-b74c-41ce-a097-0c483af1de07" />
+<img width="1883" height="722" alt="Screenshot 2026-10-18 144817" src="https://github.com/user-attachments/assets/c0f85f5e-ffb7-4a9c-b0b5-db40576249d0" />
+<img width="1909" height="673" alt="Screenshot 2026-10-22 222214" src="https://github.com/user-attachments/assets/9801570d-b142-4a0f-8ed8-b0702eff8933" />
+<img width="1920" height="651" alt="Screenshot 2026-10-06 153257" src="https://github.com/user-attachments/assets/732464af-3350-4d01-92df-0ac97dd712ea" />
 
 ---
 
