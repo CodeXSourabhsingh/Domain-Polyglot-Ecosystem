@@ -4,7 +4,7 @@
 
 Try the live BIJA app here:
 
-https://bio-pipelines-dwdstyhyqtljc3xaxkj3zv.streamlit.app/
+https://egfkwhydbfb22uavluzdf4.streamlit.app/
 
 ## Executive Summary
 
