@@ -2,18 +2,8 @@
 
 > A connected bioinformatics portfolio for sequence analysis, protein structure assessment, clinical cohort filtering, and viral variant tracking.
 
-[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-CRISPR%20Gene%20Editing%20Simulator-2ea44f?style=for-the-badge)](https://advance-biocode-whdkzngbtm3ojrz4du4kgc.streamlit.app/)
-[![PRISM Demo](https://img.shields.io/badge/📊%20PRISM%20Demo-Advanced%20Clinical%20Pipeline-2ea44f?style=for-the-badge)](https://advance-biocode-95t2yzvng6j7hqordph6bc.streamlit.app/)
-[![COVID-19 Demo](https://img.shields.io/badge/🦠%20COVID--19%20Demo-Variant%20Mutation%20Tracker-2ea44f?style=for-the-badge)](https://advance-biocode-2dvc5hdwriquhcezve3wyz.streamlit.app/)
-[![Protein Mutation Demo](https://img.shields.io/badge/🧫%20Protein%20Mutation%20Demo-Structure%20Analyzer-2ea44f?style=for-the-badge)](https://advance-biocode-dmogu9dlhr6l5kjm8peqfz.streamlit.app/)
-[![Drug-Target Demo](https://img.shields.io/badge/💊%20Drug--Target%20Demo-Interaction%20Explorer-2ea44f?style=for-the-badge)](https://advance-biocode-ewjbtfap7ensteshckapp8.streamlit.app/)
-[![Microbiome Demo](https://img.shields.io/badge/🌍%20Microbiome%20Demo-Diversity%20Dashboard-2ea44f?style=for-the-badge)](https://advance-biocode-glrckmx5empu7jygarh75j.streamlit.app/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
-
 Advance-bio_code is a Python-based bioinformatics toolkit designed for research, learning, and exploration across multiple layers of molecular and clinical analysis. The project brings together six integrated applications for genomic analysis, protein evaluation, cohort screening, and viral surveillance.
 
----
 
 5 tools. 1 ecosystem. 0 automated decisions.
 
