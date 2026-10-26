@@ -6,10 +6,7 @@ Clinical software has a bottleneck: the people who understand the medicine can't
 
 This repository is the central hub for my clinical and bioinformatics platforms. 
 
-> **🛑 COMMERCIAL LICENSING NOTICE:** 
-> The source code for the platforms listed below is **proprietary and maintained in private repositories.** This public repository serves as the architectural showcase and documentation hub. All platforms are live and available for demonstration. For commercial deployment, integration, or source code licensing, please contact me directly.
 
----
 ## LIVE DEMO is inside the tool readme
 
 ## 🚀 The Ecosystem
@@ -74,7 +71,7 @@ Every platform in this ecosystem is built on the same foundational architecture:
 ## 👨‍💻 About the Architect
 
 **Sourabh Singh** 
-*Forward Deployed Engineer & Systems Architect*
+* Domain polyglot & Systems Architect*
 
 I am a self-taught engineer 12th pass (PCB) No degree, no bootcamp I don't just write code; I learn the domain, architect the system, and ship the product. That's the job.
 
