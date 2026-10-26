@@ -79,5 +79,4 @@ I am a self-taught engineer 12th pass (PCB) No degree, no bootcamp I don't just 
 *   **Architecture Notebook:** [View my handwritten system designs](https://app.notion.com/p/Architecture-Notebook-11-Domains-40-Days-deb76e18923b4b01a7060ea8ec1a92dc)
 *   **Email:** sourabh30542dev@gmail.com
 
-My goal is to eventually become a Founding Engineer. Right now, I am looking for junior roles, freelance prototyping contracts, and custom tool development to level up my production skills."
 
