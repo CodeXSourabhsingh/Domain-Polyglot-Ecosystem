@@ -66,24 +66,6 @@ The system follows a 4-step evidence chain:
 
 ---
 
-## Architecture
-
-```mermaid
-flowchart TD
-    A[Gene / Mutation Input] --> B[NCBI Sequence Retrieval]
-    B --> C[CRISPR Target Analysis]
-    C --> D[Human Verification Step]
-    D --> E[Protein Structure Mapping]
-    E --> F[Hydrophobicity + BLOSUM62 Analysis]
-    F --> G[ChEMBL Drug Discovery]
-    G --> H[Candidate Therapy Dashboard]
-    H --> I[Researcher Review / Decision Support]
-```
-
-This architecture preserves a clear evidence trail from genomic mutation to structural consequence to therapeutic candidate.
-
----
-
 ## Key capabilities
 
 - Gene-based DNA retrieval and validation
@@ -134,6 +116,9 @@ This project is built with a test-driven mindset. The validation suite targets b
 
 ### Validation status
 - 18/18 boundary and logic tests passing
+
+- <img width="1920" height="718" alt="Screenshot 2026-10-26 230301" src="https://github.com/user-attachments/assets/1f1d24d6-eb14-487c-97e7-3815df8b3728" />
+
 
 ---
 
