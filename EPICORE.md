@@ -297,13 +297,7 @@ Future production work should include:
 
 ## About the Architect
 
-I am Sourabh Singh, a software developer focused on building practical systems that combine backend engineering, computational biology, and applied product thinking.
-
-My work centers on creating reproducible, testable systems that can operate in real-world environments. EPI-CORE reflects that approach: it is built not just as a concept demonstration, but as a structured backend system with validation, secure storage, and modular architecture.
-
-I am actively exploring collaborations with researchers, clinicians, biotech teams, and institutions interested in translational bioinformatics and epidemiological intelligence.
-
----
+"I am Sourabh Singh. I am 20 years old, 3 months into coding, and self-taught. I don't just build prototypes; I build production-grade systems. I am the Domain Polyglot—I bridge the gap between complex medicine and clean code. I am not looking for a standard 9-to-5 role. I am actively exploring collaborations with researchers, clinicians, biotech teams, and founders who need a technical co-founder to build their MVP from 0 to 1. I build the architecture; we share the upside."
 
 ## Closing Statement
 
