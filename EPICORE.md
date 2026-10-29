@@ -219,6 +219,8 @@ Clinical and bioinformatic systems require trust. EPI-CORE is validated using a 
 - Unknown lineage handling and graceful failure paths
 - Combined risk classification thresholds
 - Boundary conditions where risk escalates from Elevated to Critical
+- 
+<img width="1860" height="747" alt="Screenshot 2026-10-24 155547" src="https://github.com/user-attachments/assets/18f69f9b-5bc7-4b50-ac8c-bc7b203f4ab6" />
 
 ### Current Validation Status
 
