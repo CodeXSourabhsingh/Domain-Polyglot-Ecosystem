@@ -1,100 +1,333 @@
+# EPI-CORE: Pathogen & Microbiome Risk Intelligence
 
-🧬 EPI-CORE: Pathogen & Microbiome Tracker
-
-A Production-Grade Clinical API merging viral genomic surveillance with host microbiome diversity.
+A clinical decision-support system that correlates viral genomic surveillance with host microbiome diversity to estimate epidemiological risk.
 
 Built by Sourabh Singh | Python | FastAPI | Docker | SQLAlchemy | MySQL | Biopython
 
 ---
 
-Overview
+## Executive Summary
 
-EPI-CORE is a bio-defense pipeline that correlates two critical layers of epidemiology: the pathogen's ability to escape immunity, and the host's immune system strength.
+EPI-CORE is designed to connect two critical signals in infectious disease surveillance:
 
-It helps researchers answer two questions:
+1. The pathogen's ability to evade immune protection
+2. The host's immune resilience, represented by microbiome diversity
 
-1. The Disguise: How dangerous is the viral mutation (e.g., Omicron)?
-2. The Security Guard: How strong is the patient's gut microbiome (Shannon Diversity)?
+The platform analyzes viral mutations, evaluates their risk profile, and compares that against gut microbiome diversity metrics such as the Shannon Diversity Index. The result is a combined risk assessment that helps researchers and public-health teams identify cases where a high-risk viral variant coincides with weakened host defense capacity.
 
-By merging these two data points, the engine calculates a Combined Risk Assessment.
-
-Why this project exists (The Analogy)
-
-When a virus mutates, it is a burglar putting on a new disguise to sneak past the locks. Your gut microbiome is the security guard.
-
-Public health data is siloed. We analyze the virus in one lab and the patient's microbiome in another. But a burglar is only dangerous if the guard is asleep. EPI-CORE exists to connect the pathogen to the host.
-
-What the Pipeline Does
-
-The system follows a strict 3-step architecture:
-
-1. The Disguise (Viral Mutation Analysis)
-
-· Fetches real viral genomes (e.g., SARS-CoV-2 Omicron) from the NCBI database.
-· Scans the sequence for mutations that increase Transmissibility or Immune Escape (e.g., E484K, N501Y).
-
-2. The Security Guard (Microbiome Dashboard)
-
-· Ingests operational taxonomic unit (OTU) data for gut microbiome samples.
-· Calculates the Shannon Diversity Index to measure community richness and evenness.
-· Low diversity = "sleeping guards" (compromised immunity).
-
-3. The Combined Risk Assessment (The Merge)
-
-· If a high-escape virus meets a patient with low microbiome diversity, the engine flags a CRITICAL RISK.
-· Results are securely logged to a MySQL vault via SQLAlchemy.
+This project is intended for research and decision support, not clinical diagnosis. It is designed as a secure, extensible backend system that can ingest biological data, compute risk signals, and persist full audit records for reproducible analysis.
 
 ---
 
-🏗️ Production Architecture
+## Why this project exists
 
-This is not a local script. It is a production-grade backend system.
+Public health data is often fragmented: viral sequencing data is generated in one environment, while host microbiome data is measured elsewhere. This makes it difficult to understand the relationship between pathogen escape potential and host immune readiness.
 
-· The Bouncer (FastAPI): A REST API layer that validates JSON inputs via Pydantic and handles all requests.
-· The Black Box (Docker): The entire engine and its heavy dependencies (Pandas, NumPy, Biopython) are containerized for cloud deployment.
-· The Password (JWT Auth): OAuth2 Bearer token security. Only authenticated researchers can trigger the engine.
-· The Vault (SQLAlchemy + MySQL): Every calculation is securely persisted to a relational database, maintaining a full clinical audit trail without storing PII.
+EPI-CORE addresses that gap by merging these datasets into a single analytical pipeline.
 
----
+The analogy is straightforward:
 
-🛠️ Tech Stack
+- A viral mutation is a disguise used by a pathogen to evade immune detection.
+- The gut microbiome acts as a defense layer that reflects host resilience.
+- If a highly immune-escaping virus encounters a host with low microbiome diversity, the risk profile becomes significantly more concerning.
 
-· Backend: Python, FastAPI, Uvicorn
-· Database: MySQL, SQLAlchemy ORM
-· Bioinformatics: Biopython, NCBI E-utilities
-· Data Science: Pandas, NumPy
-· Infrastructure: Docker, JWT (JSON Web Tokens)
-· Testing: Pytest
+The goal is not to replace clinical judgment, but to give researchers a structured way to interpret high-risk scenarios.
 
 ---
 
-🧪 Validation & Testing (Test-Driven Development)
+## Problem Statement
 
-In clinical software, a math error is a liability. EPI-CORE is validated with a custom Pytest suite targeting the worst-case biological scenarios.
+In infectious disease intelligence, two questions are often treated separately:
 
-The suite covers:
+- How dangerous is the pathogen?
+- How resilient is the host?
 
-· Shannon Math: Ensuring the diversity index calculates correctly even with zero or single-species samples.
-· Unknown Lineages: Ensuring the engine fails gracefully if a new variant doesn't match known signatures.
-· Combined Risk Logic: Validating the exact boundaries where a virus goes from "Elevated" to "Critical."
+Most systems are optimized for one perspective at a time. Viral surveillance tools focus on mutation analysis, while microbiome tools focus on diversity metrics. There is a limited number of systems that combine these dimensions into a single risk model.
 
-Result: 8/8 Passing.
+This disconnect creates blind spots in translational epidemiology. A pathogen may appear dangerous in isolation, but its effective threat depends on the host environment, especially when diversity in the gut microbiome is low.
 
-(Insert Pytest terminal screenshot here)
-
+EPI-CORE attempts to bridge that gap using data-driven logic and a reproducible backend architecture.
 
 ---
 
-⚠️ Honest Limitations
+## Core Functionality
 
-· Research Use Only: This tool is a decision-support prototype. It does not provide clinical diagnoses.
-· Data Dependency: The engine relies on the NCBI API. If NCBI goes down, the engine will return a safe error.
-· Human-in-the-loop: The system flags risk; the researcher makes the final call.
+The platform follows a three-layer analytical flow:
+
+### 1. Viral Mutation Analysis
+
+- Fetches viral genomic sequences from trusted sources such as NCBI
+- Identifies high-risk mutations associated with transmissibility or immune escape
+- Evaluates variant signatures such as E484K, N501Y, and other lineage markers
+- Flags mutations with a strong risk profile based on known biological patterns
+
+### 2. Microbiome Diversity Analysis
+
+- Ingests operational taxonomic unit (OTU) or abundance data from host samples
+- Computes Shannon Diversity Index to measure community richness and evenness
+- Interprets low diversity as reduced immune-supporting ecological balance
+- Identifies cases with weaker host resilience
+
+### 3. Combined Risk Assessment
+
+- Combines pathogen escape potential with host microbiome diversity
+- Applies a risk rule engine to classify outcomes as Low, Elevated, High, or Critical
+- Persists results in a secure audit trail for traceability and review
 
 ---
 
-👨‍💻 About the Architect
+## System Architecture
 
-I am Sourabh Singh. I am 20 years old, 3 months into coding, and self-taught. I don't just build prototypes; I build production-grade systems. I am looking for clinic partners, CROs, or biotech founders who need a technical co-founder to build their MVP from 0 to 1. I build the architecture; we share the upside.
+EPI-CORE is built as a backend service, designed for scalable deployment and secure handling of analytical workflows.
 
-"The mode is a data decision, not a capability decision. We build the bridge; the physician decides."
+### Components
+
+- API Layer: FastAPI service for request validation, routing, and response handling
+- Processing Engine: Python-based analysis layer for sequence evaluation and microbiome calculations
+- Database Layer: SQLAlchemy + MySQL for persistence and audit logging
+- Containerization: Docker-based deployment for reproducible environments
+- Auth Layer: JWT-based access control to restrict system use
+- Testing Layer: Pytest-driven validation for edge cases and risk logic
+
+### High-Level Flow
+
+1. Request arrives via authenticated API
+2. Viral sequence and microbiome data are validated
+3. Mutation analysis is executed
+4. Diversity metrics are computed
+5. Risk logic combines both signals
+6. Result is stored in MySQL with metadata and timestamps
+7. Response is returned to the caller
+
+---
+
+## Technical Stack
+
+- Backend: Python, FastAPI, Uvicorn
+- Database: MySQL, SQLAlchemy ORM
+- Bioinformatics: Biopython, NCBI E-utilities
+- Data Science: Pandas, NumPy
+- Infrastructure: Docker, JWT
+- Testing: Pytest
+
+---
+
+## Data Flow and Risk Model
+
+The engine uses a layered decision framework:
+
+- Viral risk signal: derived from mutation profile and lineage risk
+- Host resilience signal: derived from microbiome diversity index
+- Combined risk: ecosystem-level assessment based on interaction between the two
+
+### Simplified Example
+
+If a sample contains:
+
+- a highly immune-escaping viral profile
+- low gut microbiome diversity
+
+Then the engine flags a higher combined-risk state, such as Critical.
+
+In practical terms:
+
+- High viral escape + stable microbiome = elevated, but not necessarily critical
+- High viral escape + low diversity = concerning and often critical
+
+This logic supports interpretation, not diagnosis.
+
+---
+
+## Risk Logic Example
+
+A simple representation of the scoring logic could be structured like this:
+
+- Low diversity sample: Shannon Index below threshold
+- High variant risk: mutation signature indicates immune escape
+- Combined classification:
+  - Low: minimal concern
+  - Elevated: moderate concern
+  - High: notable risk
+  - Critical: high escape potential + low host resilience
+
+These thresholds are configurable and should be validated against real-world datasets before deployment in a clinical or research environment.
+
+---
+
+## API Design
+
+The system exposes a RESTful API for secure interaction.
+
+### Example Request
+
+```json
+{
+  "virus": {
+    "lineage": "Omicron",
+    "sequence": "ATG..."
+  },
+  "microbiome": {
+    "otu_data": [
+      { "species": "Bacteroides", "abundance": 150 },
+      { "species": "Firmicutes", "abundance": 120 }
+    ]
+  }
+}
+```
+
+### Example Response
+
+```json
+{
+  "lineage": "Omicron",
+  "viral_risk": "High",
+  "microbiome_diversity": 1.84,
+  "risk_level": "Critical",
+  "summary": "High immune-escape viral profile combined with low microbiome diversity."
+}
+```
+
+The API layer validates input, performs authentication, and ensures results are stored in the system with audit metadata.
+
+---
+
+## Database and Audit Model
+
+EPI-CORE stores calculation metadata to preserve traceability and accountability.
+
+### Core persistence concepts
+
+- request metadata
+- lineage or viral sequence inputs
+- mutation analysis outputs
+- Shannon diversity values
+- combined risk classification
+- timestamps
+- researcher or system identifier
+
+This is designed to support reproducibility without unnecessarily storing personal identifying information.
+
+---
+
+## Validation and Testing
+
+Clinical and bioinformatic systems require trust. EPI-CORE is validated using a focused Pytest suite covering critical edge cases and risk boundaries.
+
+### Test Coverage
+
+- Shannon diversity calculation under zero and singleton species scenarios
+- Unknown lineage handling and graceful failure paths
+- Combined risk classification thresholds
+- Boundary conditions where risk escalates from Elevated to Critical
+
+### Current Validation Status
+
+The project includes automated validation for key model behaviors and is structured to support continuous verification as new datasets and logic branches are added.
+
+---
+
+## Honest Limitations
+
+EPI-CORE is intentionally scoped as a research and decision-support tool, not a clinical diagnostic engine.
+
+### Current limitations
+
+- Research use only: the system does not provide medical diagnosis
+- Data dependency: calculation quality depends on external biological data sources
+- Human oversight required: the final decision remains with the researcher or clinician
+- Prototype maturity: while designed as a production-oriented backend, real-world deployment should include additional validation and regulatory review
+
+The project is best understood as a decision-support framework for translational analysis and exploratory clinical informatics.
+
+---
+
+## Production Readiness Goals
+
+The current system is structured around production-minded principles:
+
+- API-driven architecture
+- Dockerized deployment model
+- JWT-based authentication
+- SQLAlchemy persistence layer
+- testable logic and reproducible outcomes
+- secure audit trail
+
+Future production work should include:
+
+- advanced access control and role management
+- stronger data validation schemas
+- deployment pipeline automation
+- formal observability and monitoring
+- deeper biological validation against curated datasets
+
+---
+
+## Roadmap
+
+### Phase 1: Core MVP
+
+- viral mutation scanning
+- microbiome diversity metric calculation
+- risk rule engine
+- database persistence
+- API layer and auth
+
+### Phase 2: Research Readiness
+
+- expanded lineage database
+- improved mutation annotation
+- richer microbiome input standards
+- stronger validation suite
+
+### Phase 3: Pilot Deployment
+
+- cloud deployment
+- monitoring and error tracking
+- role-based access control
+- benchmark comparisons against real datasets
+
+### Phase 4: Clinical Translation
+
+- integration with regulated environments
+- stronger data governance
+- clinician-facing outputs
+- formal validation and collaboration with domain experts
+
+---
+
+## About the Architect
+
+I am Sourabh Singh, a software developer focused on building practical systems that combine backend engineering, computational biology, and applied product thinking.
+
+My work centers on creating reproducible, testable systems that can operate in real-world environments. EPI-CORE reflects that approach: it is built not just as a concept demonstration, but as a structured backend system with validation, secure storage, and modular architecture.
+
+I am actively exploring collaborations with researchers, clinicians, biotech teams, and institutions interested in translational bioinformatics and epidemiological intelligence.
+
+---
+
+## Closing Statement
+
+The mode is a data decision, not a capability decision. We build the bridge between complex biological signals and actionable interpretation. The physician, researcher, or public-health professional remains the final decision-maker.
+
+EPI-CORE is a framework for making that bridge more transparent, structured, and useful.
+
+---
+
+## Contact
+
+For collaborations, technical discussions, or research partnerships, reach out via the project repository or associated contact channels.
+
+---
+
+## License and Usage
+
+This project is intended for research and educational exploration. It should be used responsibly and within the boundaries of ethical scientific and clinical practice.
+
+---
+
+## Final Note
+
+EPI-CORE is best described as a decision-support platform that helps connect pathogen escape potential with host resilience. Its value lies in combining biological signals into a single analytical model that can support deeper understanding of risk in infectious disease scenarios.
+
+This project is a strong foundation for future research, validation, and domain collaboration.
+
