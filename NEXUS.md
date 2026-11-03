@@ -50,6 +50,10 @@ If the genetics match a drug and a trial, but the blood work is dangerously abno
 
 The outcome is explicit, explainable, and auditable. In clinical environments, this matters more than speed alone: the system must be safe before it is useful.
 
+<img width="1834" height="847" alt="Screenshot 2026-11-02 143135" src="https://github.com/user-attachments/assets/449e2db8-96c8-4645-98ee-301848122de9" />
+<img width="1772" height="824" alt="Screenshot 2026-11-02 143043" src="https://github.com/user-attachments/assets/34a49929-e1ed-45a5-b78b-d0912700730b" />
+<img width="1779" height="819" alt="Screenshot 2026-11-02 142659" src="https://github.com/user-attachments/assets/e4899e80-ec8b-4156-b5bc-7a1dc9142d6c" />
+
 ### Why NEXUS is different
 
 - **Deterministic Logic over Black-Box ML**: Clinical decisions are governed by strict thresholds, not opaque probability curves.
@@ -98,6 +102,9 @@ The backend exposes a secure API layer for orchestration, authentication, and da
 - Backend is deployed on **Render**
 - Containerized using **Docker**
 - Supports secure, modular service delivery for clinical workloads
+- 
+- <img width="1888" height="710" alt="Screenshot 2026-11-01 201151" src="https://github.com/user-attachments/assets/95cab0ec-0f2d-40d5-88e3-2a3f5c6c1c74" />
+<img width="1819" height="828" alt="Screenshot 2026-11-01 203053" src="https://github.com/user-attachments/assets/9d852f1d-6053-4405-8b77-296f40999b2e" />
 
 ### 3) External APIs and Data Sources
 
@@ -171,6 +178,11 @@ The project includes **133 passing Pytest cases** covering:
 - Safety-first fallback decisions
 - Trial eligibility edge cases
 - Hematology threshold violations
+<img width="1920" height="682" alt="Screenshot 2026-10-31 232735" src="https://github.com/user-attachments/assets/f4aa906c-f1e3-4bbc-8cc5-840112235e92" />
+<img width="1920" height="717" alt="Screenshot 2026-10-31 232752" src="https://github.com/user-attachments/assets/ddca11f1-b32b-489b-bfdf-ea2e311b04e4" />
+<img width="1920" height="710" alt="Screenshot 2026-10-31 232800" src="https://github.com/user-attachments/assets/69b6d516-8ede-40a3-b290-d046dc8c3d0b" />
+<img width="1903" height="715" alt="Screenshot 2026-10-31 232809" src="https://github.com/user-attachments/assets/b8dd9dec-be4a-4cdc-a659-435fbe51edc3" />
+<img width="1920" height="720" alt="Screenshot 2026-10-31 232817" src="https://github.com/user-attachments/assets/594caae7-1563-4b88-8494-4f4352d0dff3" />
 
 ### What this means operationally
 
