@@ -1,103 +1,70 @@
-# 🧬 Domain-Polyglot-Ecosystem
+# 🧬 Domain Polyglot Ecosystem
 
-The Bridge Between Clinical Medicine and Software Architecture
+**Bridging clinical medicine, bioinformatics, and software architecture.**
 
-Clinical software has a bottleneck: the people who understand the medicine can't code, and the people who code don't understand the medicine. I am a Domain Polyglot. I learn the biology, map the decision logic, and build the pipelines.
+This repository is a portfolio of clinical and bioinformatics prototypes built by learning each domain, translating its concepts into software, and validating the resulting logic. It brings together architecture, engines, and tests across **14 clinical and bioinformatics domains**.
 
-This repository is the public portfolio for my ecosystem. It contains the architecture, the engines, and the validation for 14 different clinical and bioinformatics domains.
+> **Medical disclaimer:** These projects are for educational and research exploration only. They are not medical devices and do not provide medical advice, diagnosis, treatment recommendations, or a substitute for professional judgment. Do not use them to make decisions about patient care.
 
----
+## 🚀 Public prototypes
 
-## LIVE DEMO is inside the tool readme
+The public prototypes are individual Streamlit applications. Their source code and demo details are available in each project's repository and README.
 
-## 🚀 The Ecosystem
+| Project | Focus | Validation and features |
+| --- | --- | --- |
+| **BIJA — Fertility Triage** | Maps AMH, FSH, and semen-analysis inputs to an ART decision-tree prototype covering IUI, IVF, and ICSI. | 20 pytest cases, including azoospermia and PCOS edge cases; includes a “Waiting Room” empathy layer and male-factor considerations. |
+| **HEMA-CORE — Unified Hematology** | Blood compatibility, CBC interpretation using stated WHO 2023 thresholds, and Rh-pregnancy risk. | 16 pytest cases. |
+| **METABO-CORE — Metabolic & Pharmacokinetic** | Glucose risk classification and pharmacokinetic estimates, including Vd, loading dose, and steady state. | 15 pytest cases. |
 
-Click on any project below to view its detailed architecture, screenshots, clinical logic, and live demo link.
+**Demo links:** See the corresponding project README for its current demo URL. Add direct repository and demo links to this table when publishing them, so visitors can find each prototype quickly.
 
+## 🔒 Private systems
 
-🚀 The Public Arsenal (Live Prototypes)
+Some components are maintained in private repositories and are not included in this public portfolio. The concepts include:
 
-These are the individual engines. They are deployed on Streamlit and the code is available in the linked repositories.
+- **Human Genetic Data Warehouse:** A proposed master-detail data model connecting domain records through a shared patient identifier.
+- **Mutation Trail Explorer:** CRISPR simulation, 3D protein visualization with Py3Dmol, and ChEMBL interaction exploration.
+- **EPI-CORE:** Viral immune-escape and microbiome Shannon-diversity risk exploration.
+- **EVO-CORE:** Bacterial-resistance and Mendelian-inheritance simulations.
+- **Molecular Sequence Engine:** PCR melting-temperature calculations, GC sliding windows, and RNA translation.
 
+Private systems are not available for public use. Contact me via [LinkedIn](https://www.linkedin.com/in/sourabh-singh-7b124934/) to discuss a demonstration.
 
-1. BIJA: Fertility Triage
+## 🧪 Validation
 
-· Logic: Maps AMH, FSH, and semen analysis to an ART decision tree (IUI, IVF, ICSI).
-· Validation: 20 Pytest cases covering extreme outliers (Azoospermia, PCOS).
-· Features: The "Waiting Room" empathy layer, male-factor inclusion.
+The public ecosystem currently reports **85+ passing pytest cases**. Tests target edge conditions such as NaNs, zero standard deviation, extreme outliers, and negative inputs. Test counts describe the current suite; they are not a claim of clinical validation or regulatory approval.
 
-2. HEMA-CORE: Unified Hematology
+<p align="center">
+  <img width="1910" height="706" alt="Prototype test results" src="https://github.com/user-attachments/assets/311b7c15-b74c-41ce-a097-0c483af1de07" />
+  <img width="1883" height="722" alt="Prototype screenshot" src="https://github.com/user-attachments/assets/c0f85f5e-ffb7-4a9c-b0b5-db40576249d0" />
+  <img width="1909" height="673" alt="Prototype screenshot" src="https://github.com/user-attachments/assets/9801570d-b142-4a0f-8ed8-b0702eff8933" />
+  <img width="1920" height="651" alt="Prototype screenshot" src="https://github.com/user-attachments/assets/732464af-3350-4d01-92df-0ac97dd712ea" />
+</p>
 
-· Logic: Blood compatibility, CBC interpretation (WHO 2023 thresholds), and Rh-pregnancy risk.
-· Validation: 16 Pytest cases.
+## 🧠 Engineering principles
 
-3. METABO-CORE: Metabolic & Pharmacokinetic
+1. **Human in the loop:** Tools surface calculations and information; a qualified professional remains responsible for interpretation and decisions.
+2. **Relational integrity:** Where persistence is used, MySQL master-detail schemas and audit trails support traceability.
+3. **Boundary validation:** Tests exercise thresholds and edge cases, not only typical inputs.
+4. **Transparent limitations:** Each tool should document its intended use, assumptions, and limitations.
 
-· Logic: Glucose risk classification + Pharmacokinetic dose estimation (Vd, Loading Dose, Steady State).
-· Validation: 15 Pytest cases.
+## 🛠️ Technology
 
----
+- **Language:** Python
+- **Data science:** Pandas, NumPy
+- **Bioinformatics:** Biopython, Py3Dmol, NCBI E-utilities, ChEMBL API, PDB API
+- **Database:** MySQL
+- **Interfaces and visualization:** Streamlit, Matplotlib, Plotly
+- **Testing:** pytest
 
-🔒 The Proprietary Megazone (Private Repositories)
+This repository is a portfolio and project index. For installation and usage instructions, consult the README in the individual prototype repository.
 
-The true power of this ecosystem is the Human Genetic Data Warehouse.
+## 👨‍💻 About
 
-It is a unified Master-Detail schema that connects every domain using a master patient_id. A physician enters a single ID and instantly sees the patient's hematology, pharmacokinetics, fertility, and microbiome data.
+**Sourabh Singh** — Domain Polyglot and Systems Architect
 
-Because this is proprietary IP, the merged code is kept in a private repository.
+I am a self-taught engineer with a PCB background. I learn the subject matter, translate it into software, validate the implementation, and ship the product.
 
-· Mutation Trail Explorer: CRISPR simulation → 3D Protein (Py3Dmol) → ChEMBL Drug Interactions.
-
-· EPI-CORE: Viral immune escape + Microbiome Shannon Diversity combined risk.
-
-· EVO-CORE: Bacterial resistance (Fleming) + Mendelian inheritance (Mendel) simulations.
-
-· Molecular Sequence Engine: PCR Tm calculations, GC sliding windows, RNA translation.
-
-If you would like a live demo of the Megazone or the proprietary engines, please reach out via LinkedIn.
-
----
-
-🧪 Test-Driven Development (The Proof)
-
-I don't just build; I validate. Every engine is tested against the worst-case biological scenarios (NaNs, SD=0, extreme outliers, negative inputs).
-
-Current Test Coverage: 85+ Passing Pytest Cases
-
-<img width="1910" height="706" alt="Screenshot 2026-10-23 235541" src="https://github.com/user-attachments/assets/311b7c15-b74c-41ce-a097-0c483af1de07" />
-<img width="1883" height="722" alt="Screenshot 2026-10-18 144817" src="https://github.com/user-attachments/assets/c0f85f5e-ffb7-4a9c-b0b5-db40576249d0" />
-<img width="1909" height="673" alt="Screenshot 2026-10-22 222214" src="https://github.com/user-attachments/assets/9801570d-b142-4a0f-8ed8-b0702eff8933" />
-<img width="1920" height="651" alt="Screenshot 2026-10-06 153257" src="https://github.com/user-attachments/assets/732464af-3350-4d01-92df-0ac97dd712ea" />
-
----
-
-## 🧠 The Engineering Philosophy
-
-Every platform in this ecosystem is built on the same foundational architecture:
-
-1.  **Human-in-the-Loop:** The software flags risks, calculates probabilities, and surfaces insights. It does *not* autonomously prescribe. The physician or researcher makes the final decision.
-2.  **Relational Integrity:** Data is persisted using Master-Detail schemas in MySQL. Nothing is ephemeral; every calculation is logged for auditability.
-3.  **Boundary Validation:** Clinical logic is only as good as its edge cases. Every tool is backed by rigorous Pytest suites that test exact clinical thresholds.
-4.  **Honest Limitations:** Every README and UI clearly states what the tool does *not* do.
-
-
-🛠️ The Tech Stack
-
-· Languages: Python
-· Data Science: Pandas, NumPy
-· Bioinformatics: Biopython, Py3Dmol, NCBI E-utilities, ChEMBL API, PDB API
-· Database: MySQL (Relational Schema, LEFT JOINs, Audit Trails)
-· UI: Streamlit, Matplotlib, Plotly
-· Testing: Pytest
-
-
-## 👨‍💻 About the Architect
-
-**Sourabh Singh** 
-* Domain polyglot & Systems Architect*
-
-I am a self-taught engineer 12th pass (PCB) No degree, no bootcamp; I don't just write code; I learn the domain, architect the system, and ship the product. That's the job.
-
-*   **LinkedIn:** [Sourabh Singh](https://www.linkedin.com/in/sourabh-singh-7b124934/)
-*   **Architecture Notebook:** [View my handwritten system designs](https://app.notion.com/p/Architecture-Notebook-11-Domains-40-Days-deb76e18923b4b01a7060ea8ec1a92dc)
-*   **Email:** sourabh30542dev@gmail.com
+- **LinkedIn:** [Sourabh Singh](https://www.linkedin.com/in/sourabh-singh-7b124934/)
+- **Architecture notebook:** [Handwritten system designs](https://app.notion.com/p/Architecture-Notebook-11-Domains-40-Days-deb76e18923b4b01a7060ea8ec1a92dc)
+- **Email:** [sourabh30542dev@gmail.com](mailto:sourabh30542dev@gmail.com)
