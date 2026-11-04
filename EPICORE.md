@@ -202,6 +202,9 @@ The API layer validates input, performs authentication, and ensures results are 
 
 EPI-CORE stores calculation metadata to preserve traceability and accountability.
 
+<img width="1292" height="612" alt="Screenshot 2026-10-30 003802" src="https://github.com/user-attachments/assets/beb9cfb6-1e0f-4338-95e7-487a9b5e1660" />
+
+
 ### Core persistence concepts
 
 - request metadata
