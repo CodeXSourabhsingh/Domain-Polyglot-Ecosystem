@@ -60,6 +60,8 @@ The platform follows a three-layer analytical flow:
 - Identifies high-risk mutations associated with transmissibility or immune escape
 - Evaluates variant signatures such as E484K, N501Y, and other lineage markers
 - Flags mutations with a strong risk profile based on known biological patterns
+- <img width="1447" height="625" alt="Screenshot 2026-10-30 003410" src="https://github.com/user-attachments/assets/1d928450-c8ee-4f58-a013-1d035a9a7e86" />
+
 
 ### 2. Microbiome Diversity Analysis
 
@@ -67,12 +69,16 @@ The platform follows a three-layer analytical flow:
 - Computes Shannon Diversity Index to measure community richness and evenness
 - Interprets low diversity as reduced immune-supporting ecological balance
 - Identifies cases with weaker host resilience
+- 
+
 
 ### 3. Combined Risk Assessment
 
 - Combines pathogen escape potential with host microbiome diversity
 - Applies a risk rule engine to classify outcomes as Low, Elevated, High, or Critical
 - Persists results in a secure audit trail for traceability and review
+- <img width="1455" height="597" alt="Screenshot 2026-10-30 003545" src="https://github.com/user-attachments/assets/74720abe-713b-435c-b174-d6b27e9f8248" />
+
 
 ---
 
