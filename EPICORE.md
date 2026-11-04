@@ -69,7 +69,8 @@ The platform follows a three-layer analytical flow:
 - Computes Shannon Diversity Index to measure community richness and evenness
 - Interprets low diversity as reduced immune-supporting ecological balance
 - Identifies cases with weaker host resilience
-- 
+- <img width="1476" height="671" alt="Screenshot 2026-10-30 003505" src="https://github.com/user-attachments/assets/1d2d0bcb-c0ce-41cd-aaee-b382a26bce57" />
+
 
 
 ### 3. Combined Risk Assessment
