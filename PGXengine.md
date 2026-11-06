@@ -1,67 +1,82 @@
-# 🧬 PGx Engine: Precision Dosing API
+# PGx Engine: Precision Dosing API
 
-**A Production-Grade Pharmacogenomics API adjusting drug doses based on genetic mutations.**
+A pharmacogenomics decision-support prototype exploring genotype-informed dose calculations for warfarin-related CYP2C9 and VKORC1 variants.
 
-Built by Sourabh Singh | Python | FastAPI | Docker | SQLAlchemy | MySQL
+**Technology:** Python · FastAPI · Docker · SQLAlchemy · MySQL
+
+> **Important:** This project is for research and software demonstration only. It is not a medical device or prescribing tool. Do not use its outputs to make treatment decisions. Warfarin dosing requires individualized clinical assessment and qualified clinician oversight.
 
 ---
 
 ## Overview
-Standard drug dosing is blind to genetics. A patient with a genetic mutation in the CYP2C9 enzyme (a "Poor Metabolizer") processes drugs like Warfarin at a drastically slower rate. Prescribing a standard dose leads to drug accumulation, toxicity, and potentially fatal internal bleeding.
 
-The PGx Engine is a REST API that scans for genetic mutations, calculates how the mutation alters the drug's half-life, and dynamically adjusts the Loading and Maintenance dose to safe levels.
+Many factors influence a patient's response to warfarin, including genetic variation. PGx Engine is a REST API prototype that accepts patient and genotype information, applies the project's pharmacokinetic and dose-adjustment logic, and returns a calculated result.
 
-## The Analogy: The Traffic Jam & The Delivery Truck
-*   **The Traffic Jam (Genetics):** The API scans for the CYP2C9 mutation. If the patient is a "Poor Metabolizer," the enzyme highway is jammed.
-*   **The Delivery Truck (PK Math):** Because the highway is jammed, the drug (the delivery truck) stays in the body longer. The engine mathematically extends the drug's half-life (e.g., from 40 hours to 140 hours) and dynamically drops the maintenance dose (e.g., from 4.07mg to 0.81mg) to prevent toxicity.
+The project explores how genetic information can be incorporated into an auditable software workflow. Its calculations should not be interpreted as clinically validated recommendations: the model's assumptions, supported inputs, and outputs must be reviewed against the implementation and appropriate clinical evidence before any research or clinical use.
 
----
+## How the concept works
 
-## 🏗️ Production Architecture (The API Factory)
-This is not a local script. It is a containerized, secure microservice.
-*   **The Bouncer (FastAPI):** Ingests JSON patient data (genetics, weight, target concentration) and validates it using Pydantic.
-*   **The Black Box (Docker):** Containerized for seamless deployment across local and cloud environments.
-*   **The Password (JWT Auth):** OAuth2 Bearer token security. Only authenticated clinicians can trigger the dosing engine.
-*   **The Vault (SQLAlchemy + MySQL):** Every genetic dose adjustment is securely logged into a relational database for clinical audit trails.
+- **Genotype input:** The service evaluates the supported CYP2C9 and VKORC1 information provided to it.
+- **Calculation:** Project-specific logic applies genetic and pharmacokinetic adjustments to the dosing calculation.
+- **Result and record:** The API returns a result and, according to the project design, records dose-adjustment events in a relational database.
 
----
+Genotype alone does not determine an appropriate warfarin dose. Clinical factors, validated dosing guidance, and clinician judgment remain essential.
 
-## 🧪 Validation (Test-Driven Development)
-In clinical pharmacology, a math error is a liability. The engine is validated using a Pytest suite that tests the boundaries of genetic multipliers and pharmacokinetic crashes.
-*   **Test Coverage:** Normal Metabolizer (`*1/*1`), Intermediate (`*1/*2`), Poor Metabolizer (`*3/*3`), and extreme weight boundaries.
-*   **Crash Prevention:** Tests explicitly ensure the API does not crash if a patient has a half-life of 0 (ZeroDivisionError prevention).
-*   **Result:** 45 passing Pytest cases.
+## Architecture
 
----
+- **FastAPI and Pydantic:** HTTP API and request-data validation.
+- **Docker:** Containerized application packaging.
+- **JWT / OAuth2 bearer authentication:** Authentication for protected API operations, as implemented by the project.
+- **SQLAlchemy and MySQL:** Relational persistence for application records and auditability.
 
-## 🚀 How to Run Locally
-1. **Clone the repository:**
+The description above summarizes the intended components; consult the source code and deployment configuration for the exact routes, settings, and security behavior.
+
+## Validation and tests
+
+The project describes a Pytest suite covering:
+
+- Normal (`*1/*1`), intermediate (`*1/*2`), and poor (`*3/*3`) CYP2C9 metabolizer examples.
+- Extreme weight boundaries.
+- Edge cases involving zero half-life and division-by-zero prevention.
+
+The project reports **45 passing Pytest cases**. This is software test coverage, not evidence of clinical validation, safety, or effectiveness. Test results may change as the code evolves; run the suite locally to verify the current state.
+
+## Run locally
+
+The commands below follow the project's published setup instructions. Check the repository and application configuration for the correct environment-variable names and required MySQL settings.
+
+1. Clone the API repository:
+
    ```bash
    git clone https://github.com/CodeXSourabhsingh/pgx-production-api.git
    cd pgx-production-api
-2. Set up your environment secrets: Create a .env file (MySQL credentials).
-3. Build and run with Docker:
+   ```
+
+2. Create a `.env` file containing the required MySQL credentials and application secrets. Do not commit this file or share real credentials.
+
+3. Build and start the container:
+
    ```bash
    docker build -t pgx-api .
    docker run --env-file .env -p 8000:8000 pgx-api
    ```
-4. Access the API: Go to http://localhost:8000/docs to view the interactive Swagger UI. Click Authorize to log in and test the endpoints.
 
-🚨 Live API Demo
+4. Open the interactive API documentation at <http://localhost:8000/docs> if the application is running locally and exposes the docs at that route. Use only non-production test data.
 
-· Interactive Swagger UI: [INSERT LIVE RENDER LINK HERE]
+## Demo
 
-⚠️ Honest Limitations
+A hosted demo URL has not been provided. Add a verified Swagger UI link here when one is available; do not publish real patient or genetic data in a public demo.
 
-· Research Use Only: This tool is a decision-support prototype. It does not provide clinical diagnoses.
-· Drug Coverage: Currently validated for CYP2C9/VKORC1 (Warfarin). Not yet expanded to all CYP450 enzymes.
-· Human-in-the-loop: The tool flags risk; the physician makes the final call.
+## Limitations and responsible use
 
----
+- **Research and demonstration only:** The service does not diagnose, prescribe, or replace a clinician.
+- **Limited scope:** The project describes coverage for warfarin-related CYP2C9 and VKORC1 logic; it does not claim support for other drugs or genes.
+- **Clinical validation required:** Software tests do not establish clinical validity. Any future clinical use would require appropriate evidence, expert review, governance, and regulatory assessment.
+- **Privacy and security:** Genetic and health information is sensitive. Use synthetic data for demos and tests, and do not deploy with real patient data without a suitable privacy, security, and compliance review.
+- **Human oversight:** A qualified clinician must independently assess any clinical decision.
 
-👨‍💻 About the Architect
+## About
 
-I am Sourabh Singh. I am 20 years old, 3 months into coding, and self-taught. I don't just build prototypes; I build production-grade systems. I am looking for clinic partners or biotech founders who need a technical co-founder to build their MVP from 0 to 1. I build the architecture; we share the upside.
+PGx Engine is a software project by Sourabh Singh exploring pharmacogenomics, API development, and decision-support workflows. The goal is to investigate how genotype-aware calculations can be made structured and traceable while keeping clinical decisions under qualified human oversight.
 
-"The mode is a data decision, not a capability decision. We build the bridge; the physician decides."
-   
+> “The mode is a data decision, not a capability decision. We build the bridge; the physician decides.”
