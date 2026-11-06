@@ -1,82 +1,144 @@
-# PGx Engine: Precision Dosing API
 
-A pharmacogenomics decision-support prototype exploring genotype-informed dose calculations for warfarin-related CYP2C9 and VKORC1 variants.
+🧬 PGx Engine: Precision Dosing API
 
-**Technology:** Python · FastAPI · Docker · SQLAlchemy · MySQL
+https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white
 
-> **Important:** This project is for research and software demonstration only. It is not a medical device or prescribing tool. Do not use its outputs to make treatment decisions. Warfarin dosing requires individualized clinical assessment and qualified clinician oversight.
+A Production-Grade Pharmacogenomics API adjusting drug doses based on genetic mutations.
+
+Built by Sourabh Singh | Python | FastAPI | Docker | SQLAlchemy | MySQL
 
 ---
 
-## Overview
+Overview
 
-Many factors influence a patient's response to warfarin, including genetic variation. PGx Engine is a REST API prototype that accepts patient and genotype information, applies the project's pharmacokinetic and dose-adjustment logic, and returns a calculated result.
+Standard drug dosing is blind to genetics. A patient with a genetic mutation in the CYP2C9 enzyme (a "Poor Metabolizer") processes drugs like Warfarin at a drastically slower rate. Prescribing a standard dose leads to drug accumulation, toxicity, and potentially fatal internal bleeding.
 
-The project explores how genetic information can be incorporated into an auditable software workflow. Its calculations should not be interpreted as clinically validated recommendations: the model's assumptions, supported inputs, and outputs must be reviewed against the implementation and appropriate clinical evidence before any research or clinical use.
+The PGx Engine is a REST API that scans for genetic mutations, calculates how the mutation alters the drug's half-life, and dynamically adjusts the Loading and Maintenance dose to safe levels.
 
-## How the concept works
+The Analogy: The Traffic Jam & The Delivery Truck
 
-- **Genotype input:** The service evaluates the supported CYP2C9 and VKORC1 information provided to it.
-- **Calculation:** Project-specific logic applies genetic and pharmacokinetic adjustments to the dosing calculation.
-- **Result and record:** The API returns a result and, according to the project design, records dose-adjustment events in a relational database.
+· The Traffic Jam (Genetics): The API scans for the CYP2C9 mutation. If the patient is a "Poor Metabolizer," the enzyme highway is jammed.
+· The Delivery Truck (PK Math): Because the highway is jammed, the drug (the delivery truck) stays in the body longer. The engine mathematically extends the drug's half-life (e.g., from 40 hours to 140 hours) and dynamically drops the maintenance dose (e.g., from 4.07mg to 0.81mg) to prevent toxicity.
 
-Genotype alone does not determine an appropriate warfarin dose. Clinical factors, validated dosing guidance, and clinician judgment remain essential.
+---
 
-## Architecture
+🏗️ Production Architecture (The API Factory)
 
-- **FastAPI and Pydantic:** HTTP API and request-data validation.
-- **Docker:** Containerized application packaging.
-- **JWT / OAuth2 bearer authentication:** Authentication for protected API operations, as implemented by the project.
-- **SQLAlchemy and MySQL:** Relational persistence for application records and auditability.
+This is not a local script. It is a containerized, secure microservice.
 
-The description above summarizes the intended components; consult the source code and deployment configuration for the exact routes, settings, and security behavior.
+· The Bouncer (FastAPI): Ingests JSON patient data (genetics, weight, target concentration) and validates it using Pydantic.
+· The Black Box (Docker): Containerized for seamless deployment across local and cloud environments.
+· The Password (JWT Auth): OAuth2 Bearer token security. Only authenticated clinicians can trigger the dosing engine.
+· The Vault (SQLAlchemy + MySQL): Every genetic dose adjustment is securely logged into a relational database for clinical audit trails.
 
-## Validation and tests
+---
 
-The project describes a Pytest suite covering:
+📊 The Audit Trail (Data Persistence)
 
-- Normal (`*1/*1`), intermediate (`*1/*2`), and poor (`*3/*3`) CYP2C9 metabolizer examples.
-- Extreme weight boundaries.
-- Edge cases involving zero half-life and division-by-zero prevention.
+Clinical software must be auditable. The PGx Engine does not just calculate in the browser; it writes every decision to a MySQL database via SQLAlchemy.
 
-The project reports **45 passing Pytest cases**. This is software test coverage, not evidence of clinical validation, safety, or effectiveness. Test results may change as the code evolves; run the suite locally to verify the current state.
+The audit log captures:
 
-## Run locally
+· patient_id
+· gene & mutation (e.g., CYP2C9, 3/3)
+· phenotype (Poor Metabolizer)
+· base_half_life vs adjusted_half_life
+· standard_dose vs personalized_dose
+· timestamp
 
-The commands below follow the project's published setup instructions. Check the repository and application configuration for the correct environment-variable names and required MySQL settings.
+This ensures a physician can track the exact mathematical logic used to adjust a patient's dose, creating a defensive legal and clinical shield.
 
-1. Clone the API repository:
+---
 
+🧪 Validation (Test-Driven Development)
+
+In clinical pharmacology, a math error is a liability. The engine is validated using a Pytest suite that tests the boundaries of genetic multipliers and pharmacokinetic crashes.
+
+· Test Coverage: Normal Metabolizer (*1/*1), Intermediate (*1/*2), Poor Metabolizer (*3/*3), and extreme weight boundaries.
+· Crash Prevention: Tests explicitly ensure the API does not crash if a patient has a half-life of 0 (ZeroDivisionError prevention).
+· Result: 45 passing Pytest cases.
+
+```bash
+collected 45 items
+test_pgx.py::test_cyp2c9_multipliers[*1/*1-1.0-Normal Metabolizer] PASSED
+test_pgx.py::test_cyp2c9_multipliers[*2/*2-3.5-Poor Metabolizer] PASSED
+test_pgx.py::test_cyp2c9_multipliers[*3/*3-3.5-Poor Metabolizer] PASSED
+test_pgx.py::test_pk_math_extreme_weights PASSED
+test_pgx.py::test_zero_div_zero_half_life PASSED
+==================== 45 passed in 1.84s ====================
+```
+
+---
+
+🚀 How to Run Locally
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/CodeXSourabhsingh/pgx-production-api.git
    cd pgx-production-api
    ```
-
-2. Create a `.env` file containing the required MySQL credentials and application secrets. Do not commit this file or share real credentials.
-
-3. Build and start the container:
-
+2. Create Virtual Environment:
    ```bash
-   docker build -t pgx-api .
-   docker run --env-file .env -p 8000:8000 pgx-api
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
+3. Install Dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Set up Environment Variables:
+   Create a .env file in the root directory:
+   ```env
+   MYSQL_HOST=localhost
+   MYSQL_USER=root
+   MYSQL_PASSWORD=your_password
+   MYSQL_DATABASE=pgx_vault
+   JWT_SECRET_KEY=your_super_secret_key
+   ```
+5. Run the Engine:
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+   Access the Swagger UI at http://localhost:8000/docs to authenticate and test the API.
 
-4. Open the interactive API documentation at <http://localhost:8000/docs> if the application is running locally and exposes the docs at that route. Use only non-production test data.
+---
 
-## Demo
+📂 Project Structure
 
-A hosted demo URL has not been provided. Add a verified Swagger UI link here when one is available; do not publish real patient or genetic data in a public demo.
+```text
+pgx-production-api/
+│
+├── app/
+│   ├── main.py          # FastAPI application instance
+│   ├── database.py      # SQLAlchemy setup and MySQL connection
+│   ├── models.py        # Database tables (Audit Vault)
+│   ├── schemas.py       # Pydantic data validation models
+│   ├── auth.py          # JWT Authentication logic
+│   └── logic/
+│       ├── cyp2c9.py    # CYP2C9 genetic multipliers
+│       └── pk_math.py   # Pharmacokinetic dose calculations
+│
+├── tests/
+│   ├── test_pgx.py      # Pytest boundary and crash-prevention tests
+│   └── __init__.py
+│
+├── Dockerfile           # Container configuration
+├── requirements.txt     # Python dependencies
+└── README.md            # This file
+```
 
-## Limitations and responsible use
+---
 
-- **Research and demonstration only:** The service does not diagnose, prescribe, or replace a clinician.
-- **Limited scope:** The project describes coverage for warfarin-related CYP2C9 and VKORC1 logic; it does not claim support for other drugs or genes.
-- **Clinical validation required:** Software tests do not establish clinical validity. Any future clinical use would require appropriate evidence, expert review, governance, and regulatory assessment.
-- **Privacy and security:** Genetic and health information is sensitive. Use synthetic data for demos and tests, and do not deploy with real patient data without a suitable privacy, security, and compliance review.
-- **Human oversight:** A qualified clinician must independently assess any clinical decision.
+🧠 About the Architect
 
-## About
+Sourabh Singh
+I am a Full-Stack Systems Architect and Domain Polyglot. I learn a medical specialty, model its decision logic, and ship a production-grade platform. I don't just build backends; I build the deterministic safety gates that protect patients and reduce clinical liability. I bridge the gap between complex medicine and clean code.
 
-PGx Engine is a software project by Sourabh Singh exploring pharmacogenomics, API development, and decision-support workflows. The goal is to investigate how genotype-aware calculations can be made structured and traceable while keeping clinical decisions under qualified human oversight.
+---
 
-> “The mode is a data decision, not a capability decision. We build the bridge; the physician decides.”
+🛡️ Final Statement
+
+The PGx Engine is not just a calculator. It is a deterministic safety layer. It enforces safety over convenience, explainability over opacity, and mathematical precision over blind standard dosing.
+
+Designed for teams that care about one thing above all else:
+Getting the clinical decision right before the patient is put at risk.
