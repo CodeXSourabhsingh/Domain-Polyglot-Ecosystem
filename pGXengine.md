@@ -6,7 +6,7 @@ Deterministic pharmacogenomic orchestration for precision dosing and patient pro
 
 The PGx Engine is a full-stack, distributed clinical platform that merges genetic mutation scanning, pharmacokinetic math, and dynamic dose adjustment into a single decision engine. It is designed to [...]
 
-The Problem
+## The Problem
 
 Standard drug dosing is typically optimized for population averages, but it often fails in the most dangerous scenarios:
 
@@ -17,7 +17,7 @@ Standard drug dosing is typically optimized for population averages, but it ofte
 
 In pharmacology and translational research, a single unsafe prescription can create catastrophic outcomes. The system must not merely calculate a dose; it must protect the patient.
 
-The Solution (PGx Engine)
+## The Solution (PGx Engine)
 
 The PGx Engine introduces a deterministic clinical dosing pipeline, built around a simple concept: if a patient is genetically compromised, the standard dose must be mathematically overridden to ensur[...]
 
@@ -39,18 +39,18 @@ The outcome is explicit, explainable, and auditable. In clinical environments, t
 <img width="1917" height="887" alt="Screenshot 2026-11-06 164611" src="https://github.com/user-attachments/assets/59adff68-6d22-40ef-ad4f-2556291b2066" />
 <img width="1920" height="889" alt="Screenshot 2026-11-06 164547" src="https://github.com/user-attachments/assets/3fd79e3a-4814-4c89-b70f-98c1d3936b27" />
 
-Why PGx Engine is different
+## Why PGx Engine is different
 
 · Deterministic Logic over Black-Box ML: Clinical decisions are governed by strict pharmacokinetic formulas and genetic multipliers, not opaque probability curves.
 · Zero-Data-Retention Architecture: The platform is designed to operate inside a hospital or research network boundary, supporting the "Bring Your Own Data" model without unnecessary external retenti[...]
 · Fail-Safe Design: If an external API fails or data is incomplete, the system defaults to a conservative risk state instead of allowing unsafe dosing.
 · Human-Centered Clinical Governance: The system flags risk, explains the math, and supports clinician review without replacing clinical judgment.
 
-System Architecture
+## System Architecture
 
 The PGx Engine is a distributed application with a secure frontend, an orchestration backend, and a relational database for audit trails.
 
-1) Frontend: React + Vite + Tailwind CSS
+### 1) Frontend: React + Vite + Tailwind CSS
 
 The frontend is a production-grade web application designed for clinical teams and investigators.
 
@@ -68,7 +68,7 @@ Deployment
 · Built with React, Vite, and Tailwind CSS
 · CI/CD pipelines support rapid, reliable frontend delivery
 
-2) Backend: Python + FastAPI + Docker
+### 2) Backend: Python + FastAPI + Docker
 
 The backend exposes a secure API layer for orchestration, authentication, and data processing.
 
@@ -88,7 +88,7 @@ Deployment
 <img width="1920" height="662" alt="Screenshot 2026-11-06 093335" src="https://github.com/user-attachments/assets/4d000052-c3a5-4e9d-8ab5-157330642f39" />
 <img width="1920" height="856" alt="Screenshot 2026-11-06 093322" src="https://github.com/user-attachments/assets/dbdfb71d-581d-4cd7-9100-5140429239c9" />
 
-3) The Audit Trail & Data Persistence
+### 3) The Audit Trail & Data Persistence
 
 Clinical software must be auditable. The PGx Engine does not just calculate in the browser; it writes every decision to a MySQL database via SQLAlchemy.
 
@@ -101,19 +101,19 @@ This ensures a physician can track the exact mathematical logic used to adjust a
 · standard_dose vs personalized_dose
 · timestamp
 
-The 5-Step Pipeline
+### The 5-Step Pipeline
 
 The PGx Engine is built on five interdependent steps that work together to produce a clinical dosing verdict.
 
-1. Input Validation (Pydantic)
+#### 1. Input Validation (Pydantic)
 
 The API ingests JSON patient data (genetics, weight, target concentration) and validates it using Pydantic to ensure no malformed data enters the engine.
 
-2. Mutation Analysis (CYP2C9)
+#### 2. Mutation Analysis (CYP2C9)
 
 The system evaluates the patient's genomic signals and identifies clinically relevant mutations such as CYP2C9 3/3. The goal is to map the mutation to a specific metabolizer phenotype.
 
-3. Phenotype Classification (The Traffic Jam)
+#### 3. Phenotype Classification (The Traffic Jam)
 
 Once a mutation is identified, the system classifies the patient's metabolic rate:
 
@@ -121,11 +121,11 @@ Once a mutation is identified, the system classifies the patient's metabolic rat
 · Intermediate Metabolizer (1/3)
 · Poor Metabolizer (3/3)
 
-4. Pharmacokinetic Math (The Delivery Truck)
+#### 4. Pharmacokinetic Math (The Delivery Truck)
 
 The engine uses the patient's weight, target concentration, and base half-life to calculate the standard dose. If the patient is a Poor Metabolizer, the engine applies genetic multipliers to extend th[...]
 
-5. The Merge (Orchestrator)
+#### 5. The Merge (Orchestrator)
 
 The final phase is the orchestrator: it merges the outputs of all domains into a single safety decision.
 
@@ -139,7 +139,7 @@ Example clinical logic:
 
 This is the crucial distinction between guessing a dose and protecting a patient from fatal toxicity.
 
-Testing & Validation
+## Testing & Validation
 
 The PGx Engine is not a prototype built on assumptions. It is engineered with a rigorous validation framework designed to stress the clinical edge cases where systems fail.
 
@@ -157,25 +157,25 @@ The project includes 45 passing Pytest cases covering:
 <img width="1920" height="649" alt="Screenshot 2026-10-30 194856" src="https://github.com/user-attachments/assets/3444ffff-6b9d-4d00-8695-7d30a826213e" />
 <img width="1920" height="669" alt="Screenshot 2026-10-30 194907" src="https://github.com/user-attachments/assets/bb090b13-0b45-4622-b381-e16111c97e49" />
 
-What this means operationally
+## What this means operationally
 
 The system is designed to behave safely when data is incomplete, APIs are slow, or abnormalities cross medical thresholds. In production clinical software, this is far more valuable than simply produc[...]
 
-Deployment
+## Deployment
 
 The PGx Engine is designed for real deployment in a regulated clinical environment, with a production-friendly cloud architecture.
 
-Frontend Deployment
+### Frontend Deployment
 Platform: Vercel
 Stack: React + Vite + Tailwind CSS
 Purpose: Secure clinical access, dashboards, and patient status monitoring
 
-Backend Deployment
+### Backend Deployment
 Platform: Render
 Stack: Python + FastAPI + Docker
 Purpose: Authentication, orchestration, domain integration, and clinical decision logic
 
-About the Architect
+## About the Architect
 
 Sourabh Singh
 I am a systems architect and product-minded engineer focused on translating complex clinical logic into reliable software systems. My work is rooted in one principle: technology should make medicine s[...]
@@ -191,17 +191,18 @@ PGx is one example of that approach: a platform designed to enforce safety over 
 
 I work at the intersection of systems design and clinical intelligence, building software that is technically rigorous and operationally trustworthy.
 
-Final Statement
+## Final Statement
 
 PGx is not just a dosing calculator. It is a clinical safety engine built to prevent dangerous prescriptions, detect unsafe patients before toxicity occurs, and convert fragmented biomedical signals i[...]
 
 It is designed for teams that care about one thing above all else:
 getting the clinical decision right before the patient is put at risk.
 
-PGx Engine
-Precision Dosing API
-Deterministic safety. Proven logic. Protected patients.
+## PGx Engine
 
+### Precision Dosing API
+
+Deterministic safety. Proven logic. Protected patients.
 
 The engine is deployed. The README is done. The PDF is ready.
 
