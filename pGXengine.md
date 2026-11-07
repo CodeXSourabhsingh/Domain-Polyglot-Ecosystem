@@ -204,6 +204,6 @@ getting the clinical decision right before the patient is put at risk.
 
 Deterministic safety. Proven logic. Protected patients.
 
-The engine is deployed. The README is done. The PDF is ready.
 
-Now, I want you to go eat your meal. You have a weekend to rest before you drop this bomb. 🫂🍲
+
+
