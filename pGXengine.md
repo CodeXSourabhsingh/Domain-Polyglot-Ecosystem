@@ -1,10 +1,10 @@
-PGx Engine - Precision Dosing API
+# PGx Engine - Precision Dosing API
 
 ![FastAPI](https://img.shields.io/badge/FASTAPI-005571?style=flat-square&logo=fastapi&logoColor=white) ![React](https://img.shields.io/badge/REACT-20232A?style=flat-square&logo=react&logoColor=61DAFB) ![Docker](https://img.shields.io/badge/DOCKER-2496ED?style=flat-square&logo=docker&logoColor=white) ![MySQL](https://img.shields.io/badge/MYSQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![Pytest](https://img.shields.io/badge/PYTEST-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
 
 Deterministic pharmacogenomic orchestration for precision dosing and patient protection.
 
-The PGx Engine is a full-stack, distributed clinical platform that merges genetic mutation scanning, pharmacokinetic math, and dynamic dose adjustment into a single decision engine. It is designed to prevent fatal adverse events in standard dosing protocols by enforcing hard clinical boundaries before a drug is prescribed.
+The PGx Engine is a full-stack, distributed clinical platform that merges genetic mutation scanning, pharmacokinetic math, and dynamic dose adjustment into a single decision engine. It is designed to [...]
 
 The Problem
 
@@ -19,12 +19,12 @@ In pharmacology and translational research, a single unsafe prescription can cre
 
 The Solution (PGx Engine)
 
-The PGx Engine introduces a deterministic clinical dosing pipeline, built around a simple concept: if a patient is genetically compromised, the standard dose must be mathematically overridden to ensure safety.
+The PGx Engine introduces a deterministic clinical dosing pipeline, built around a simple concept: if a patient is genetically compromised, the standard dose must be mathematically overridden to ensur[...]
 
 This is the core principle behind the PGx pipeline:
 
 · The Traffic Jam (Genetics): The API scans for the CYP2C9 mutation. If the patient is a "Poor Metabolizer," the enzyme highway is jammed.
-· The Delivery Truck (PK Math): Because the highway is jammed, the drug (the delivery truck) stays in the body longer. The engine mathematically extends the drug's half-life (e.g., from 40 hours to 200 hours).
+· The Delivery Truck (PK Math): Because the highway is jammed, the drug (the delivery truck) stays in the body longer. The engine mathematically extends the drug's half-life (e.g., from 40 hours to 2[...]
 · The Merge / Orchestrator: The engine reconciles the genetic phenotype and dynamically drops the maintenance dose to a safe level (e.g., from 4.07mg to 0.81mg).
 
 If the genetics indicate a Poor Metabolizer, the system emits a structured safety decision:
@@ -42,7 +42,7 @@ The outcome is explicit, explainable, and auditable. In clinical environments, t
 Why PGx Engine is different
 
 · Deterministic Logic over Black-Box ML: Clinical decisions are governed by strict pharmacokinetic formulas and genetic multipliers, not opaque probability curves.
-· Zero-Data-Retention Architecture: The platform is designed to operate inside a hospital or research network boundary, supporting the "Bring Your Own Data" model without unnecessary external retention.
+· Zero-Data-Retention Architecture: The platform is designed to operate inside a hospital or research network boundary, supporting the "Bring Your Own Data" model without unnecessary external retenti[...]
 · Fail-Safe Design: If an external API fails or data is incomplete, the system defaults to a conservative risk state instead of allowing unsafe dosing.
 · Human-Centered Clinical Governance: The system flags risk, explains the math, and supports clinician review without replacing clinical judgment.
 
@@ -123,7 +123,7 @@ Once a mutation is identified, the system classifies the patient's metabolic rat
 
 4. Pharmacokinetic Math (The Delivery Truck)
 
-The engine uses the patient's weight, target concentration, and base half-life to calculate the standard dose. If the patient is a Poor Metabolizer, the engine applies genetic multipliers to extend the half-life and drastically reduce the dose.
+The engine uses the patient's weight, target concentration, and base half-life to calculate the standard dose. If the patient is a Poor Metabolizer, the engine applies genetic multipliers to extend th[...]
 
 5. The Merge (Orchestrator)
 
@@ -159,7 +159,7 @@ The project includes 45 passing Pytest cases covering:
 
 What this means operationally
 
-The system is designed to behave safely when data is incomplete, APIs are slow, or abnormalities cross medical thresholds. In production clinical software, this is far more valuable than simply producing a positive match result.
+The system is designed to behave safely when data is incomplete, APIs are slow, or abnormalities cross medical thresholds. In production clinical software, this is far more valuable than simply produc[...]
 
 Deployment
 
@@ -178,7 +178,7 @@ Purpose: Authentication, orchestration, domain integration, and clinical decisio
 About the Architect
 
 Sourabh Singh
-I am a systems architect and product-minded engineer focused on translating complex clinical logic into reliable software systems. My work is rooted in one principle: technology should make medicine safer, more explainable, and more operationally sound.
+I am a systems architect and product-minded engineer focused on translating complex clinical logic into reliable software systems. My work is rooted in one principle: technology should make medicine s[...]
 
 I build domain-specific engines that combine:
 
@@ -193,7 +193,7 @@ I work at the intersection of systems design and clinical intelligence, building
 
 Final Statement
 
-PGx is not just a dosing calculator. It is a clinical safety engine built to prevent dangerous prescriptions, detect unsafe patients before toxicity occurs, and convert fragmented biomedical signals into a single, defendable decision.
+PGx is not just a dosing calculator. It is a clinical safety engine built to prevent dangerous prescriptions, detect unsafe patients before toxicity occurs, and convert fragmented biomedical signals i[...]
 
 It is designed for teams that care about one thing above all else:
 getting the clinical decision right before the patient is put at risk.
@@ -201,3 +201,8 @@ getting the clinical decision right before the patient is put at risk.
 PGx Engine
 Precision Dosing API
 Deterministic safety. Proven logic. Protected patients.
+
+
+The engine is deployed. The README is done. The PDF is ready.
+
+Now, I want you to go eat your meal. You have a weekend to rest before you drop this bomb. 🫂🍲
