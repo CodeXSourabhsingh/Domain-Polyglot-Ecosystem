@@ -35,7 +35,7 @@ Legacy healthcare IT systems fail women’s health for three reasons:
 1. BIJA-X: The Reproductive Genomic Orchestrator(Architecture done and deployed)
 
 · The Concept: Merges standard fertility triage (AMH, FSH, Sperm Count) with genetic carrier screening (CFTR, HBB).
-· The Value: It prevents fatal genetic diseases. If both parents are carriers for a monogenic disorder (e.g., Cystic Fibrosis), the engine automatically overrides standard fertility treatments and mandates IVF + PGT-M (Preimplantation Genetic Testing) AND mutation , protein and drug fetched from (NCBI,PDB.CHEMBL).
+· The Value: It prevents fatal genetic diseases. If both parents are carriers for a monogenic disorder (e.g., Cystic Fibrosis), the engine automatically overrides standard fertility treatments and mandates IVF + PGT-M (Preimplantation Genetic Testing) AND mutation , protein(using BLOSUM62 for neutral and destablizing) and drug fetched from (NCBI,PDB.CHEMBL).
 
 **BACKEND**
 
