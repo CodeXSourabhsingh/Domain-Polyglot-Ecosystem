@@ -1,4 +1,4 @@
-🧬 The Reproductive Quadruble: A Unified Women's Health Ecosystem
+**🧬 The Reproductive Quadruble: A Unified Women's Health Ecosystem**
 
 <p align="center">
   <img src="https://img.shields.io/badge/FastAPI-0d9488?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
