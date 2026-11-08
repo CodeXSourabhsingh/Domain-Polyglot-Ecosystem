@@ -47,7 +47,7 @@ Legacy healthcare IT systems fail women’s health for three reasons:
 **FRONTEND**
 <img width="1892" height="781" alt="Screenshot 2026-11-08 061343" src="https://github.com/user-attachments/assets/7bbefbaa-35a1-4d63-a435-d46b8184f3f5" />
 <img width="1920" height="889" alt="Screenshot 2026-11-08 065123" src="https://github.com/user-attachments/assets/a2e3b9a8-969a-4604-ae23-6d25ba0e808f" />
-<img width="1899" height="901" alt="Screenshot 2026-11-08 065144" src="https://github.com/user-attachments/assets/680ebc11-461a-48dd-ba97-49e1c15672db" />
+<img width="1920" height="916" alt="Screenshot 2026-11-08 091501" src="https://github.com/user-attachments/assets/43cf2478-6b03-46d3-b89d-91f31a991805" />
 <img width="1907" height="883" alt="Screenshot 2026-11-08 065932" src="https://github.com/user-attachments/assets/a7e8ba62-65a9-4901-9ba3-a5eb92e73f24" />
 
 **PYTEST**
