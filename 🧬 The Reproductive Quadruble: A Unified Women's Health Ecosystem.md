@@ -18,16 +18,16 @@ Built by Sourabh Singh | Systems Architect & Domain Polyglot | FastAPI | React |
 
 **Executive Summary (The Vision)**
 
-The current standard of care for women’s health is fragmented. It treats the female reproductive system as a series of isolated silos: hormones are treated in one clinic, the microbiome in another, [...]
+The current standard of care for women’s health is fragmented. It treats the female reproductive system as a series of isolated silos: hormones are treated in one clinic, the microbiome in another, and genetic carrier status is often ignored until it is too late.
 
-The Reproductive Quadruble is not a collection of apps. It is a single, unified clinical ecosystem. It merges Mendelian genetics, ecological microbiome tracking, evolutionary phylogenetics, and pharma[...]
+The Reproductive Quadruble is not a collection of apps. It is a single, unified clinical ecosystem. It merges Mendelian genetics, ecological microbiome tracking, evolutionary phylogenetics, and pharmacokinetics into a single deterministic architecture. We are shifting women's health from "population averages and guesswork" to explainable, mathematically proven precision medicine.
 
 **The Core Problem (Why Legacy Systems Fail)**
 
 Legacy healthcare IT systems fail women’s health for three reasons:
 
 1. The "Black Box" of AI: Legacy systems rely on probabilistic ML models trained on messy, incomplete EHR data. In medicine, a hallucination is a fatality.
-2. The "Blind" Standard of Care: Standard IVF protocols and antibiotic treatments ignore the patient's genetic metabolizer status (PGx) and fail to account for the evolutionary resistance of pathogens[...]
+2. The "Blind" Standard of Care: Standard IVF protocols and antibiotic treatments ignore the patient's genetic metabolizer status (PGx) and fail to account for the evolutionary resistance of pathogens.
 3. Data Silos: A doctor cannot see the patient’s microbiome phylogeny while prescribing an antibiotic, and they cannot see the patient’s CYP3A4 metabolism while prescribing IVF hormones.
 
 **The 5 Engines (The Architecture of Care)**
