@@ -33,27 +33,44 @@ Legacy healthcare IT systems fail women’s health for three reasons:
 
 The 5 Engines (The Architecture of Care)
 
-1. BIJA-X: The Reproductive Genomic Orchestrator
+1. BIJA-X: The Reproductive Genomic Orchestrator(Architecture done and deployed)
 
 · The Concept: Merges standard fertility triage (AMH, FSH, Sperm Count) with genetic carrier screening (CFTR, HBB).
-· The Value: It prevents fatal genetic diseases. If both parents are carriers for a monogenic disorder (e.g., Cystic Fibrosis), the engine automatically overrides standard fertility treatments and mandates IVF + PGT-M (Preimplantation Genetic Testing).
+· The Value: It prevents fatal genetic diseases. If both parents are carriers for a monogenic disorder (e.g., Cystic Fibrosis), the engine automatically overrides standard fertility treatments and mandates IVF + PGT-M (Preimplantation Genetic Testing) and give the drug from chembl and protein rendering from pdb and mutation , gene from ncbi. 
 
-2. Vagina-X: The Microbiome Stewardship Engine
+# BACKEND
+
+<img width="1920" height="615" alt="Screenshot 2026-11-08 053122" src="https://github.com/user-attachments/assets/2867bfff-506d-452f-a33b-5d0ac13a6dc0" />
+<img width="1864" height="856" alt="Screenshot 2026-11-08 053554" src="https://github.com/user-attachments/assets/6c14fd17-309e-4fc2-b53b-a3a363329870" />
+
+#FRONTEND
+<img width="1892" height="781" alt="Screenshot 2026-11-08 061343" src="https://github.com/user-attachments/assets/7bbefbaa-35a1-4d63-a435-d46b8184f3f5" />
+<img width="1920" height="889" alt="Screenshot 2026-11-08 065123" src="https://github.com/user-attachments/assets/a2e3b9a8-969a-4604-ae23-6d25ba0e808f" />
+<img width="1899" height="901" alt="Screenshot 2026-11-08 065144" src="https://github.com/user-attachments/assets/680ebc11-461a-48dd-ba97-49e1c15672db" />
+<img width="1907" height="883" alt="Screenshot 2026-11-08 065932" src="https://github.com/user-attachments/assets/a7e8ba62-65a9-4901-9ba3-a5eb92e73f24" />
+
+#PYTEST
+<img width="1920" height="639" alt="Screenshot 2026-11-03 194848" src="https://github.com/user-attachments/assets/4d369cae-532c-40be-abf9-f596bea7cc25" />
+<img width="1920" height="639" alt="Screenshot 2026-11-03 194848" src="https://github.com/user-attachments/assets/9bcbf9c8-81c6-43a8-aa2e-acf94787eb80" />
+<img width="1920" height="624" alt="Screenshot 2026-11-03 194906" src="https://github.com/user-attachments/assets/88952fdf-7d8b-445d-85a6-148ba342912e" />
+
+
+2. Vagina-X: The Microbiome Stewardship Engine(Architecture done)
 
 · The Concept: Analyzes the vaginal microbiome (Lactobacillus vs. Gardnerella) using the Shannon Diversity Index and ecological modeling.
 · The Value: Predicts the risk of Bacterial Vaginosis (BV) recurrence. It mathematically proves that standard antibiotics alone will fail if the "good" bacterial ecology isn't restored, mandating combination therapy (antibiotics + probiotics).
 
-3. BIJA-X + PGx: Precision IVF Dosing
+3. BIJA-X + PGx: Precision IVF Dosing(Architecture done)
 
 · The Concept: Merges fertility planning with Pharmacogenomics (CYP3A4 metabolism).
 · The Value: Patients undergoing IVF take massive doses of progesterone. If a woman is a "Poor Metabolizer," standard doses cause toxic accumulation (severe sedation, liver stress). This engine calculates the exact personalized dose to ensure a safe pregnancy.
 
-4. Vagina-X + PGx: Antimicrobial Stewardship
+4. Vagina-X + PGx: Antimicrobial Stewardship(Architecture done)
 
 · The Concept: Merges microbiome treatment with antibiotic metabolism.
 · The Value: Prevents the evolution of drug-resistant superbugs by ensuring the patient metabolizes the antibiotic at the correct rate. It avoids sub-therapeutic exposure, which is the primary driver of antimicrobial resistance (AMR).
 
-5. Vagina-Phylo: Evolutionary Strain Tracking
+5. Vagina-Phylo: Evolutionary Strain Tracking(Architecture done)
 
 · The Concept: Merges the Vagina-X microbiome engine with Phylogenetic Tree Building (Jukes-Cantor distance, UPGMA clustering).
 · The Value: It takes raw DNA sequences (FASTA) from a patient's swab and builds an evolutionary tree against known superbugs. If the engine spots a mutant strain branching off, it blocks standard antibiotics and mandates aggressive combination therapy before the infection becomes untreatable.
