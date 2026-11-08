@@ -10,10 +10,6 @@
   <img src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="Pytest" />
 </p>
 
-<p align="center">
-  <strong>Deterministic clinical safety orchestration for trial matching and patient protection.</strong>
-</p>
-
 
 Deterministic Orchestration for Reproductive Genomics, Microbiome Ecology, and Precision Dosing.
 
