@@ -1,10 +1,10 @@
-# **PGx Precision Dosing Engine**
+<h1><strong>PGx Precision Dosing Engine</strong></h1>
 
 Deterministic pharmacogenomic orchestration for precision dosing and patient protection.
 
 The PGx Engine is a full-stack, distributed clinical platform that merges genetic mutation scanning, pharmacokinetic math, and dynamic dose adjustment into a single decision engine. It is designed to [...]
 
-## **The Problem**
+<h2><strong>The Problem</strong></h2>
 
 Standard drug dosing is optimized for population averages and fails dangerously:
 
@@ -13,13 +13,13 @@ Standard drug dosing is optimized for population averages and fails dangerously:
 · Patient safety is an afterthought: Blood work, age, race, and drug interactions are excluded from dosing decisions.
 · Black-box systems are not acceptable: Clinical dosing decisions need explainability and deterministic math, not probabilistic guesswork.
 
-## **The Solution (The Traffic Jam Analogy)**
+<h2><strong>The Solution (The Traffic Jam Analogy)</strong></h2>
 
 · The Highway (CYP2C9): This enzyme clears the drug. A Poor Metabolizer means the highway is jammed, causing toxicity.
 · The Target (VKORC1): This enzyme determines sensitivity. An "AA" genotype means the patient is hyper-sensitive to the drug.
 · The Merge: The engine dynamically calculates the exact dose based on the patient's genetics, age, race, height/weight, and DDIs (Amiodarone/Fluconazole). If the math calculates a dose < 2 mg/week, [...]
 
-## **System Architecture**
+<h2><strong>System Architecture</strong></h2>
 
 · Frontend (React + Vite + Tailwind): Interactive clinical dashboard with real-time alerts and standard vs. adjusted dose visual bar charts.
 <img width="1600" height="748" alt="image" src="https://github.com/user-attachments/assets/d279eb3b-8ca3-4e2c-bfec-f9bd796af956" />
@@ -35,7 +35,7 @@ Standard drug dosing is optimized for population averages and fails dangerously:
 
 · The Vault (Zero-Data-Retention): Deploys directly into the hospital's AWS VPC. No PHI is stored or transmitted externally.
 
-## **The 5-Step Pipeline**
+<h2><strong>The 5-Step Pipeline</strong></h2>
 
 1. Input Validation: Enforces strict physiological boundaries using Pydantic.
 2. Genetics Analysis: Scans CYP2C9 and VKORC1 genotypes.
@@ -43,7 +43,7 @@ Standard drug dosing is optimized for population averages and fails dangerously:
 4. PK Math (IWPC): Calculates the precise weekly maintenance dose.
 5. The Merge: Generates the structured JSON payload, practical pill schedule, and mandatory INR titration warnings.
 
-## **Testing & Validation**
+<h2><strong>Testing &amp; Validation</strong></h2>
 
 The engine is engineered to stress the exact clinical edge cases where systems fail.
 
@@ -55,15 +55,15 @@ The engine is engineered to stress the exact clinical edge cases where systems f
 ode. I model medical decision logic and ship production-grade platforms.
 <img width="1920" height="448" alt="Screenshot 2026-11-09 122812" src="https://github.com/user-attachments/assets/6dfc1103-f341-4cec-8c47-2f35aa76d7b4" />
 
-## **Final Statement**
+<h2><strong>Final Statement</strong></h2>
 
 PGx is not just a dosing calculator. It is a clinical safety engine built to prevent dangerous prescriptions, detect unsafe patients before toxicity occurs, and convert fragmented biomedical signals i[...]
 
-## **About the Architect**
+<h2><strong>About the Architect</strong></h2>
 
 Sourabh Singh
-I am a 20-year-old self-taught Systems Architect, 0-to-1 Builder, NEET (dropper) and an 4-0 amateur MMA fighter. I am the bridge between medicine and code. I model medical decision logic and ship [...]
+I am a 20-year-old self-taught Systems Architect, 0-to-1 Builder, NEET (dropper) and an 4-0 amateur MMA fighter. I am the bridge between medicine and code. I model medical decision logic and ship prod[...]
 
-## **Final Statement**
+<h2><strong>Final Statement</strong></h2>
 
-PGx is not just a dosing calculator. It is a clinical safety engine built to prevent dangerous prescriptions, detect unsafe patients before toxicity occurs, and convert fragmented biomedical signa[...]
+PGx is not just a dosing calculator. It is a clinical safety engine built to prevent dangerous prescriptions, detect unsafe patients before toxicity occurs, and convert fragmented biomedical signals i[...]
