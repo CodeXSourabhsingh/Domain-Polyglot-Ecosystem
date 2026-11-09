@@ -66,7 +66,6 @@ The engine is engineered to stress the exact clinical edge cases where systems f
 ode. I model medical decision logic and ship production-grade platforms.
 <img width="1920" height="448" alt="Screenshot 2026-11-09 122812" src="https://github.com/user-attachments/assets/6dfc1103-f341-4cec-8c47-2f35aa76d7b4" />
 
-<h2><strong>Final Statement</strong></h2>
 
 <h2><strong>About the Architect</strong></h2>
 
