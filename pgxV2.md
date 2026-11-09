@@ -61,7 +61,7 @@ PGx is not just a dosing calculator. It is a clinical safety engine built to pre
 About the Architect
 
 Sourabh Singh
-I am a 20-year-old self-taught Systems Architect, 0-to-1 Builder, and an 8-0 amateur MMA fighter. I am the bridge between medicine and code. I model medical decision logic and ship production-grade platforms.
+I am a 20-year-old self-taught Systems Architect, 0-to-1 Builder, NEET (dropper) and an 4-0 amateur MMA fighter. I am the bridge between medicine and code. I model medical decision logic and ship production-grade platforms.
 
 Final Statement
 
