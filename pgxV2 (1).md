@@ -12,7 +12,8 @@
 
 Deterministic pharmacogenomic orchestration for precision dosing and patient protection.
 
-The PGx Engine is a full-stack, distributed clinical platform that merges genetic mutation scanning, pharmacokinetic math, and dynamic dose adjustment into a single decision engine. It is designed to [...]
+The PGx Engine is a full-stack, distributed clinical platform that merges genetic mutation scanning, pharmacokinetic math, and dynamic dose adjustment into a single decision engine. It is designed to  prevent fatal adverse events in standard dosing protocols by enforcing hard clinical boundaries before a drug is prescribed.
+
 
 <h2><strong>The Problem</strong></h2>
 
@@ -27,7 +28,7 @@ Standard drug dosing is optimized for population averages and fails dangerously:
 
 · The Highway (CYP2C9): This enzyme clears the drug. A Poor Metabolizer means the highway is jammed, causing toxicity.
 · The Target (VKORC1): This enzyme determines sensitivity. An "AA" genotype means the patient is hyper-sensitive to the drug.
-· The Merge: The engine dynamically calculates the exact dose based on the patient's genetics, age, race, height/weight, and DDIs (Amiodarone/Fluconazole). If the math calculates a dose < 2 mg/week, [...]
+· The Merge: The engine dynamically calculates the exact dose based on the patient's genetics, age, race, height/weight, and DDIs (Amiodarone/Fluconazole). If the math calculates a dose  < 2 mg/week, the engine overrides and advises switching to a DOAC (Apixaban).
 
 <h2><strong>System Architecture</strong></h2>
 
@@ -67,13 +68,21 @@ ode. I model medical decision logic and ship production-grade platforms.
 
 <h2><strong>Final Statement</strong></h2>
 
-PGx is not just a dosing calculator. It is a clinical safety engine built to prevent dangerous prescriptions, detect unsafe patients before toxicity occurs, and convert fragmented biomedical signals i[...]
-
 <h2><strong>About the Architect</strong></h2>
 
-Sourabh Singh
-I am a 20-year-old self-taught Systems Architect, 0-to-1 Builder, NEET (dropper) and an 4-0 amateur MMA fighter. I am the bridge between medicine and code. I model medical decision logic and ship prod[...]
+About the Architect
+
+Sourabh Singh — Founder & Lead Systems Architect
+
+I am a 20-year-old self-taught Systems Architect and a 4-0 amateur MMA fighter (Lightweight).
+
+I bypassed traditional medical academia (3x NEET dropout) because I realized the legacy healthcare system was fundamentally broken. Instead of trying to fit into it, I decided to build the deterministic, production-grade software to fix it.
+
+I am not just a developer; I am a one-man clinical engineering department. I act as the Founder, the Systems Architect, and the QA Lead. I identify the clinical bottleneck, model the biological logic, architect the FastAPI backend, build the React frontend, and write the Pytest validation suite.
+
+I am the bridge between medicine and code. I don't just build prototypes; I build the deterministic safety gates that protect patients and reduce clinical liability.
 
 <h2><strong>Final Statement</strong></h2>
 
-PGx is not just a dosing calculator. It is a clinical safety engine built to prevent dangerous prescriptions, detect unsafe patients before toxicity occurs, and convert fragmented biomedical signals i[...]
+PGx is not just a dosing calculator. It is a clinical safety engine built to prevent dangerous prescriptions, detect unsafe patients before toxicity occurs, and convert fragmented biomedical signals into a single, defendable decision.
+
