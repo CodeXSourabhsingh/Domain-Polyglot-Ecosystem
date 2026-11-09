@@ -1,10 +1,10 @@
- NEXUS - Clinical Trial Orchestrator
+# **NEXUS - Clinical Trial Orchestrator**
 
 Deterministic clinical safety orchestration for trial matching and patient protection.
 
-NEXUS is a full-stack clinical platform that merges genomics, therapeutic logic, trial matching, and hematologic safety checks into a single decision engine. It prevents fatal adverse events in clinical trials by enforcing hard clinical boundaries before enrollment.
+NEXUS is a full-stack clinical platform that merges genomics, therapeutic logic, trial matching, and hematologic safety checks into a single decision engine. It prevents fatal adverse events in clinic[...]
 
-The Problem
+## **The Problem**
 
 Traditional clinical trial matching optimizes for cohort fit but fails dangerously:
 
@@ -12,7 +12,7 @@ Traditional clinical trial matching optimizes for cohort fit but fails dangerous
 · Safety is an afterthought: Blood work is excluded. A patient might match genetically but be clinically unsafe due to severe anemia or leukopenia.
 · Black-box systems are not acceptable.
 
-The Solution (The "Death Check" Guardrails)
+## **The Solution (The "Death Check" Guardrails)**
 
 NEXUS is a 5-Domain pipeline that uses CRISPR mutation tracking to find hidden outliers and HEMA-CORE to run safety checks.
 
@@ -20,7 +20,7 @@ NEXUS is a 5-Domain pipeline that uses CRISPR mutation tracking to find hidden o
 · Dynamic Trial Overrides: Global ranges are overridden by trial criteria. If a trial allows Platelets > 100, the engine clears a patient with 120 Platelets, even though the global range is 150-450.
 · Drug Safety Warnings: Recommending Osimertinib automatically appends a warning for Interstitial Lung Disease (ILD) and QTc prolongation.
 
-System Architecture
+## **System Architecture**
 
 · Frontend (React + Tailwind): Real-time visual analysis of patient blood data vs. normal ranges.
 
@@ -37,7 +37,7 @@ System Architecture
 
 · The Vault (Zero-Data-Retention): Deploys inside the hospital's VPC.
 
-The 5-Step Pipeline
+## **The 5-Step Pipeline**
 
 1. Mutation Trail (CRISPR): Evaluates genomic signals.
 2. Drug Logic (ChEMBL): Matches the mutation to targeted therapies (EGFR L858R -> Osimertinib).
@@ -45,7 +45,7 @@ The 5-Step Pipeline
 4. HEMA-CORE (The Death Check): Evaluates CBC data against sex-specific and trial-specific thresholds.
 5. The Merge: Orchestrates signals into a single JSON verdict (CLEARED or BLOCKED).
 
-Testing & Validation
+## **Testing & Validation**
 
 · 100/100 Randomized Stress Tests Passed (Offline Mocking): 100 synthetic oncology profiles with mocked external APIs.
   · 95 Critical Bleeding/Infection Risks Blocked.
@@ -54,18 +54,18 @@ Testing & Validation
 
 <img width="1902" height="145" alt="Screenshot 2026-11-09 204611" src="https://github.com/user-attachments/assets/c0566ada-f72a-4a80-a9c2-5895469e2ea4" />
 
-About the Architect
+## **About the Architect**
 
 Sourabh Singh — Founder & Lead Systems Architect
 
 I am a 20-year-old self-taught Systems Architect and a 4-0 amateur MMA fighter (Lightweight).
 
-I bypassed traditional medical academia (3x NEET dropout) because I realized the legacy healthcare system was fundamentally broken. Instead of trying to fit into it, I decided to build the deterministic, production-grade software to fix it.
+I bypassed traditional medical academia (3x NEET dropout) because I realized the legacy healthcare system was fundamentally broken. Instead of trying to fit into it, I decided to build the deterministic safety system that actually protects patients.
 
-I am not just a developer; I am a one-man clinical engineering department. I act as the Founder, the Systems Architect, and the QA Lead. I identify the clinical bottleneck, model the biological logic, architect the FastAPI backend, build the React frontend, and write the Pytest validation suite.
+I am not just a developer; I am a one-man clinical engineering department. I act as the Founder, the Systems Architect, and the QA Lead. I identify the clinical bottleneck, model the biological logic, and front-load the compliance burden before the patient ever reaches a dangerous decision point.
 
 I am the bridge between medicine and code. I don't just build prototypes; I build the deterministic safety gates that protect patients and reduce clinical liability.
 
-Final Statement
+## **Final Statement**
 
 NEXUS is a clinical safety engine built to prevent dangerous mismatches, detect unsafe patients before enrollment, and convert fragmented biomedical signals into a single, defendable decision.
