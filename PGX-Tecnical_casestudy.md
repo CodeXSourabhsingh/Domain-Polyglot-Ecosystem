@@ -14,7 +14,7 @@ Deterministic Pharmacogenomic Orchestration for Precision Dosing and Patient Pro
 
 The Tech Stack: FastAPI | React | Vite | Tailwind CSS | Docker | Pytest
 
-The PGx Engine is a full-stack, distributed clinical platform that merges genetic mutation scanning, pharmacokinetic math, and dynamic dose adjustment into a single decision engine. It is designed to [...]
+The PGx Engine is a full-stack, distributed clinical platform that merges genetic mutation scanning, pharmacokinetic math, and dynamic dose adjustment into a single decision engine. It is designed to unify genotype data, patient physiology, and dose logic into a single explainable clinical workflow.
 
 ## 1. The Problem: Population Averages Kill
 
@@ -47,7 +47,7 @@ Dose = 5.6044
 − Clinical Multipliers (Race, Amiodarone, Liver Disease)
 
 The CPIC Guardrail (DOAC Override): 
-If the IWPC math calculates a dose < 2 mg/week, the engine overrides the output. It flashes a blue warning: "SWITCH TO DOAC ADVISED." Why? Because at that micro-dose, Warfarin is sub-therapeutic, the [...]
+If the IWPC math calculates a dose < 2 mg/week, the engine overrides the output. It flashes a blue warning: "SWITCH TO DOAC ADVISED." Why? Because at that micro-dose, warfarin is sub-therapeutic, clinically inadequate, and associated with poor anticoagulation control, so the safer path is to recommend a direct oral anticoagulant instead.
 
 <img width="1862" height="720" alt="Screenshot 2026-11-11 013547" src="https://github.com/user-attachments/assets/8e37ec74-428e-4dff-88db-02a1d3eff4f8" />
 
@@ -55,8 +55,8 @@ If the IWPC math calculates a dose < 2 mg/week, the engine overrides the output.
 
 This is not a prototype. It is built for hospital deployment.
 
-· The Vault (Zero-Data-Retention): The Docker container deploys directly into the hospital's AWS VPC. We do not store or transmit any Protected Health Information (PHI). The hospital keeps their data[...]
-· The Bouncer (Pydantic): Strict input validation at the API gate. If a nurse types 70 instead of 7.0 for weight, or a string instead of an integer, the API rejects it with a 422 Unprocessable Entity[...]
+· The Vault (Zero-Data-Retention): The Docker container deploys directly into the hospital's AWS VPC. We do not store or transmit any Protected Health Information (PHI). The hospital keeps their data inside their own secure environment, ensuring no PHI enters our platform or logs.
+· The Bouncer (Pydantic): Strict input validation at the API gate. If a nurse types 70 instead of 7.0 for weight, or a string instead of an integer, the API rejects it with a 422 Unprocessable Entity and returns clear validation feedback for rapid correction.
 · The Frontend: React + Tailwind CSS, optimized for clinical teams with real-time risk alerts and visual bar charts comparing standard vs. adjusted doses.
 
 <img width="1600" height="555" alt="image" src="https://github.com/user-attachments/assets/f738abba-bbc6-4979-a8bb-625992e41659" />
@@ -91,7 +91,7 @@ The engine is engineered to stress the exact clinical edge cases where legacy sy
   · 84 Extreme Genetic Sensitivities Flagged.
   · 7 Patients Advised to switch to DOACs.
   · 29 Critical Bleeding Events Prevented (Dose = 0 mg).
-· The Edge Case: We didn't just test a healthy 40-year-old. We tested an 85-year-old Asian female with CYP2C9 3/3, VKORC1 AA, liver disease, and Amiodarone. The standard dose would kill her.Our engin[...]
+· The Edge Case: We didn't just test a healthy 40-year-old. We tested an 85-year-old Asian female with CYP2C9 3/3, VKORC1 AA, liver disease, and Amiodarone. The standard dose would kill her, and our engine prevents that outcome by combining genotype risk, pharmacokinetic stress, and drug interaction severity into a safer dosing recommendation.
 
 <img width="1920" height="448" alt="Screenshot 2026-11-09 122812" src="https://github.com/user-attachments/assets/6dfc1103-f341-4cec-8c47-2f35aa76d7b4" />
 
@@ -99,7 +99,7 @@ The engine is engineered to stress the exact clinical edge cases where legacy sy
 
 We are building an "Anti-Theranos" platform.
 
-· Clinical Decision Support (CDS): Under the 21st Century Cures Act, our engine is strictly classified as a CDS tool. It does not autonomously prescribe. The physician must review the math and click [...]
+· Clinical Decision Support (CDS): Under the 21st Century Cures Act, our engine is strictly classified as a CDS tool. It does not autonomously prescribe. The physician must review the math and actively confirm the recommendation before it is acted on.
 · Deterministic vs. Black-Box: Because our logic is hardcoded to CPIC and IWPC guidelines, it is fully explainable and auditable. It provides a legal shield for the hospital.
 
 ## 9. The Ecosystem Roadmap: The 2^15 Vision
@@ -108,7 +108,7 @@ PGx is not a standalone app. It is Node 1 in a massive Clinical Compiler.
 
 · We have built 15 base domains (Genomics, Pharmacology, Hematology, Oncology, etc.).
 · Using combinatorial architecture, this allows for 2^15 (32,767) unique merged clinical engines.
-· Proof of Concept: We have already successfully merged the PGx engine with the NEXUS Oncology Trial Matcher. The unified pipeline finds a clinical trial and prevents fatal drug toxicity simultaneous[...]
+· Proof of Concept: We have already successfully merged the PGx engine with the NEXUS Oncology Trial Matcher. The unified pipeline finds a clinical trial and prevents fatal drug toxicity simultaneously in the same patient workflow.
 
 <img width="1917" height="843" alt="Screenshot 2026-11-05 194256" src="https://github.com/user-attachments/assets/9ae2721a-cc21-4ec6-b1b8-2b6921ffbd3d" />
 <img width="1914" height="791" alt="Screenshot 2026-11-05 194230" src="https://github.com/user-attachments/assets/0e99a9da-bac2-4daf-a833-042088c67091" />
@@ -118,12 +118,12 @@ PGx is not a standalone app. It is Node 1 in a massive Clinical Compiler.
 Sourabh Singh — Founder & Lead Systems Architect
 I am a 20-year-old self-taught Systems Architect and an 4-0 amateur MMA fighter(Lightweight).
 
-I bypassed traditional medical academia (3x NEET dropout) because I realized the legacy healthcare system was fundamentally broken. Instead of trying to fit into it, I decided to build the determinist[...]
+I bypassed traditional medical academia (3x NEET dropout) because I realized the legacy healthcare system was fundamentally broken. Instead of trying to fit into it, I decided to build the deterministic safety systems that reduce harm at the point of care.
 
-I am not just a developer; I am a one-man clinical engineering department. I act as the Founder, the Systems Architect, and the QA Lead. I identify the clinical bottleneck, model the biological logic,[...]
+I am not just a developer; I am a one-man clinical engineering department. I act as the Founder, the Systems Architect, and the QA Lead. I identify the clinical bottleneck, model the biological logic, and build the patient-safety layer that turns raw data into decisions.
 
 I am the bridge between medicine and code. I don't just build prototypes; I build the deterministic safety gates that protect patients and reduce clinical liability.
 
 ## Final Statement
 
-PGx is not just a dosing calculator. It is a clinical safety engine built to prevent dangerous prescriptions, detect unsafe patients before toxicity occurs, and convert fragmented biomedical signals i[...]
+PGx is not just a dosing calculator. It is a clinical safety engine built to prevent dangerous prescriptions, detect unsafe patients before toxicity occurs, and convert fragmented biomedical signals into an actionable, regulated decision-support layer.
