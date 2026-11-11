@@ -128,9 +128,11 @@ PGx is not a standalone app. It is Node 1 in a massive Clinical Compiler.
 <h2 style="color:#111827; font-weight:800; margin-top:1.5rem;">11. About the Architect</h2>
 
 Sourabh Singh — Founder & Lead Systems Architect
-I am a 20-year-old self-taught Systems Architect and a 4-0 amateur MMA fighter (Lightweight).
 
-I bypassed traditional medical academia because I realized the legacy healthcare system was fundamentally broken. Instead of trying to fit into it, I decided to build the deterministic safety systems that reduce harm at the point of care.
+I am a 20-year-old self-taught Systems Architect and a 4-0 amateur MMA fighter (Lightweight
+
+I am a 3x NEET candidate. I cleared the cutoff for a private medical college, but I refused to buy my way in. I wanted to earn it, but I was training for MMA fights at the same time, which kept me from the government college cutoff.
+
 
 I am not just a developer; I am a one-man clinical engineering department. I act as the Founder, the Systems Architect, and the QA Lead. I identify the clinical bottleneck, model the biological logic, and build the patient-safety layer that turns raw data into decisions.
 
