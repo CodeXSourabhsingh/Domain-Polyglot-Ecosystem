@@ -77,8 +77,7 @@ The interface is designed for rapid clinical triage. The doctor instantly sees:
 
 <img width="1600" height="555" alt="Swagger/API validation screenshot" src="https://github.com/user-attachments/assets/f738abba-bbc6-4979-a8bb-625992e41659" />
 
-
-<img width="1885" height="859" alt="Swagger/API success screenshot" src="https://github.com/user-attachments/assets/8c148c6c-7079-40df-8b8c-d5f031b44a49" />
+<img width="1899" height="811" alt="Screenshot 2026-11-11 193614" src="https://github.com/user-attachments/assets/e94049be-5228-4bc7-a330-906f56acfce6" />
 
 
 <img width="1914" height="866" alt="Screenshot 2026-11-11 125251" src="https://github.com/user-attachments/assets/de74b49e-35c6-4308-8e27-ed6d8bf74917" />
@@ -131,7 +130,7 @@ PGx is not a standalone app. It is Node 1 in a massive Clinical Compiler.
 Sourabh Singh — Founder & Lead Systems Architect
 I am a 20-year-old self-taught Systems Architect and a 4-0 amateur MMA fighter (Lightweight).
 
-I bypassed traditional medical academia because I realized the legacy healthcare system was fundamentally broken. Instead of trying to fit into it, I decided to build the deterministic safety systems that reduce harm at the point of care.
+I am a 3x NEET candidate. I cleared the cutoff for a private medical college, but I refused to buy my way in. I wanted to earn it, but I was training for MMA fights at the same time, which kept me from the government college cutoff.
 
 I am not just a developer; I am a one-man clinical engineering department. I act as the Founder, the Systems Architect, and the QA Lead. I identify the clinical bottleneck, model the biological logic, and build the patient-safety layer that turns raw data into decisions.
 
