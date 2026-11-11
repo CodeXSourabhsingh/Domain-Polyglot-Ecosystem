@@ -1,5 +1,14 @@
 # **PGx — IWPC Precision Dosing Engine**
 
+<p align="center">
+  <img src="https://img.shields.io/badge/FastAPI-0d9488?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="Pytest" />
+</p>
+
 **Deterministic clinical safety orchestration for pharmacogenomics.**
 
 ## **1. The Problem: Population Averages Kill**
@@ -51,11 +60,22 @@ The interface is designed for rapid clinical triage. The doctor instantly sees:
 · Extreme Sensitivity Flags: If a patient's genetics and drug interactions drive the dose to zero, the UI flashes a massive red "CRITICAL BLEED RISK - DO NOT PRESCRIBE" banner.
 
 [INSERT SCREENSHOT 1 HERE: The Swagger API / Postman JSON screenshot showing the 422 Pydantic Validation Error for bad input.]
+
+<img width="1600" height="555" alt="Swagger/API validation screenshot" src="https://github.com/user-attachments/assets/f738abba-bbc6-4979-a8bb-625992e41659" />
+
 [INSERT SCREENSHOT 2 HERE: The Swagger API / Postman JSON screenshot showing the 200 Success JSON Payload.]
+
+<img width="1885" height="859" alt="Swagger/API success screenshot" src="https://github.com/user-attachments/assets/8c148c6c-7079-40df-8b8c-d5f031b44a49" />
 
 [INSERT SCREENSHOT 3 HERE: The React UI showing the 85-year-old Asian female with the 0 mg "CRITICAL BLEED RISK" banner.]
 
+<img width="1915" height="867" alt="Critical bleed risk UI screenshot" src="https://github.com/user-attachments/assets/62ed9f85-6309-4cbc-82a6-7b62f2488aa0" />
+
 [INSERT SCREENSHOT 4 HERE: The React UI showing the Normal 50yo White patient with the mathematically perfect "46.84 mg" dose and the bar chart.]
+
+<img width="1917" height="905" alt="Adjusted dose UI screenshot" src="https://github.com/user-attachments/assets/a1b04993-21fc-4017-b968-8e1fa28360d0" />
+
+<img width="1896" height="885" alt="Dose comparison UI screenshot" src="https://github.com/user-attachments/assets/162bc8e4-a723-48c0-b654-4cb437cfbac8" />
 
 ## **6. The Pipeline**
 
@@ -74,6 +94,10 @@ The engine is engineered to stress the exact clinical edge cases where legacy sy
 
 [INSERT SCREENSHOT 5 HERE: The terminal screenshot showing the 100/100 Stress Tests Passed and the green checkmarks for the Mocked Tests.]
 
+<img width="1920" height="285" alt="Stress test results screenshot" src="https://github.com/user-attachments/assets/55bd98d4-5611-4a68-96a5-324e0b3a3988" />
+
+<img width="1920" height="288" alt="Mocked tests screenshot" src="https://github.com/user-attachments/assets/b84f57d8-5e89-44e9-b0b9-ca2feca59822" />
+
 ## **8. Regulatory Strategy: CDS vs. SaMD**
 
 Our regulatory philosophy: Explainable, Deterministic, and Accountable.
@@ -90,6 +114,10 @@ PGx is not a standalone app. It is Node 1 in a massive Clinical Compiler.
 · Proof of Concept (Phase 2): We have successfully merged the PGx engine with the NEXUS Oncology Trial Matcher. The unified pipeline finds a clinical trial, prevents fatal drug toxicity, and checks blood work simultaneously in the same patient workflow.
 
 [INSERT SCREENSHOT 6 HERE: The NEXUS + PGx merged UI screenshot from Page 7 of your old PDF.]
+
+<img width="1917" height="843" alt="NEXUS and PGx merged UI screenshot" src="https://github.com/user-attachments/assets/9ae2721a-cc21-4ec6-b1b8-2b6921ffbd3d" />
+
+<img width="1914" height="791" alt="NEXUS and PGx workflow screenshot" src="https://github.com/user-attachments/assets/0e99a9da-bac2-4daf-a833-042088c67091" />
 
 ## **10. About the Architect**
 
