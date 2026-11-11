@@ -1,4 +1,4 @@
-<h1 style="color:#111827; font-weight:900; letter-spacing:-0.03em; margin-top:1.25rem;">**PGx — IWPC Precision Dosing Engine**</h1>
+<h1 style="color:#111827; font-weight:900; letter-spacing:-0.03em; margin-top:1.25rem;">PGx — IWPC Precision Dosing Engine</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/FastAPI-0d9488?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
@@ -56,14 +56,14 @@ To ensure patient safety beyond the baseline 2009 model, this engine overlays de
 If the final calculated dose is < 2 mg/week, the engine overrides the output. It flashes a critical warning: "HOLD WARFARIN. SWITCH TO DOAC ADVISED."
 
 The Mechanical Heart Valve Hard-Stop:
-If the patient has a mechanical heart valve (where DOACs are strictly contraindicated), the engine hard-blocks the DOAC recommendation. It suppresses the routine dosing schedule and mandates: "No rout[...]
+If the patient has a mechanical heart valve (where DOACs are strictly contraindicated), the engine hard-blocks the DOAC recommendation. It suppresses the routine dosing schedule and mandates: "No routine dosing schedule generated. Cardiology review required."
 
 <h2 style="color:#111827; font-weight:800; margin-top:1.5rem;">5. Enterprise Architecture</h2>
 
 This is not a toy script. It is a production-grade architecture built for hospital evaluation and deployment.
 
 · The Vault (Zero-Data-Retention): The Docker container deploys directly into the hospital's AWS VPC. We do not store or transmit any Protected Health Information (PHI).
-· The Bouncer (Pydantic): Strict input validation at the API gate. If a nurse types a 15cm height or a 500kg weight, the API rejects it with a 422 Unprocessable Entity, preventing fatal math errors b[...]
+· The Bouncer (Pydantic): Strict input validation at the API gate. If a nurse types a 15cm height or a 500kg weight, the API rejects it with a 422 Unprocessable Entity, preventing fatal math errors before the engine even runs.
 · The Frontend: React + Tailwind CSS, optimized for clinical teams with real-time risk alerts and visual bar charts comparing standard vs. adjusted doses.
 
 <h2 style="color:#111827; font-weight:800; margin-top:1.5rem;">6. UI & Visual Validation</h2>
@@ -98,9 +98,9 @@ The interface is designed for rapid clinical triage. The doctor instantly sees:
 The engine is engineered to stress the exact clinical edge cases where legacy systems fail.
 
 · 100/100 Mocked API Stress Tests Passed: We generated 100 randomized patient profiles mixing extreme genetics, ages, and drug interactions, verifying zero crashes and 100% logic accuracy.
-· The Enzyme Inducer Edge Case: We tested a patient on Rifampin. The engine correctly increased the dose to prevent sub-therapeutic clotting, proving it understands drug metabolism in both directions[...]
+· The Enzyme Inducer Edge Case: We tested a patient on Rifampin. The engine correctly increased the dose to prevent sub-therapeutic clotting, proving it understands drug metabolism in both directions.
 · The Pydantic Bouncer: We tested a 15cm height. The API successfully rejected the input before the math could even run.
-· The Extreme Edge Case: We tested an 85-year-old Asian female with CYP2C9 3/3, VKORC1 AA, liver disease, and Amiodarone. The standard dose would kill her. The engine overrides the math, calculates a[...]
+· The Extreme Edge Case: We tested an 85-year-old Asian female with CYP2C9 3/3, VKORC1 AA, liver disease, and Amiodarone. The standard dose would kill her. The engine overrides the math, calculates a dose of 0 mg, and flags her for immediate Hematology consult.
 
 <img width="1912" height="733" alt="Screenshot 2026-11-11 192708" src="https://github.com/user-attachments/assets/f2ee0579-f0e3-47c9-a2ef-04dd0ada24a0" />
 
@@ -109,8 +109,8 @@ The engine is engineered to stress the exact clinical edge cases where legacy sy
 
 Our regulatory philosophy: Explainable, Deterministic, and Accountable.
 
-· Clinical Decision Support (CDS): Under the 21st Century Cures Act, our engine is strictly classified as a CDS tool. It does not autonomously prescribe. The physician must review the math and active[...]
-· Defensible Audit Trail: Because our logic is hardcoded to CPIC and IWPC guidelines, it is fully explainable. If a physician overrides the engine, the software creates a timestamped audit trail, red[...]
+· Clinical Decision Support (CDS): Under the 21st Century Cures Act, our engine is strictly classified as a CDS tool. It does not autonomously prescribe. The physician must review the math and actively confirm the recommendation.
+· Defensible Audit Trail: Because our logic is hardcoded to CPIC and IWPC guidelines, it is fully explainable. If a physician overrides the engine, the software creates a timestamped audit trail, reducing clinical liability and providing a defensible record.
 
 <h2 style="color:#111827; font-weight:800; margin-top:1.5rem;">10. The Ecosystem Roadmap: The Domain Compiler</h2>
 
@@ -118,7 +118,7 @@ PGx is not a standalone app. It is Node 1 in a massive Clinical Compiler.
 
 · We have built 15 base domains (Genomics, Pharmacology, Hematology, Oncology, etc.).
 · Using combinatorial architecture, this allows for 2^15 (32,767) unique merged clinical engines.
-· Proof of Concept (Phase 2): We have successfully merged the PGx engine with the NEXUS Oncology Trial Matcher. The unified pipeline finds a clinical trial, prevents fatal drug toxicity, and checks b[...]
+· Proof of Concept (Phase 2): We have successfully merged the PGx engine with the NEXUS Oncology Trial Matcher. The unified pipeline finds a clinical trial, prevents fatal drug toxicity, and checks blood work simultaneously in the same patient workflow.
 
 <img width="1917" height="843" alt="NEXUS and PGx merged UI screenshot" src="https://github.com/user-attachments/assets/9ae2721a-cc21-4ec6-b1b8-2b6921ffbd3d" />
 
@@ -130,9 +130,9 @@ PGx is not a standalone app. It is Node 1 in a massive Clinical Compiler.
 Sourabh Singh — Founder & Lead Systems Architect
 I am a 20-year-old self-taught Systems Architect and a 4-0 amateur MMA fighter (Lightweight).
 
-I am a 3x NEET candidate. I cleared the cutoff for a private medical college, but I refused to buy my way in. I wanted to earn it, but I was training for MMA fights at the same time, which kept me fro[...]
+I bypassed traditional medical academia because I realized the legacy healthcare system was fundamentally broken. Instead of trying to fit into it, I decided to build the deterministic safety systems that reduce harm at the point of care.
 
-I am not just a developer; I am a one-man clinical engineering department. I act as the Founder, the Systems Architect, and the QA Lead. I identify the clinical bottleneck, model the biological logic,[...]
+I am not just a developer; I am a one-man clinical engineering department. I act as the Founder, the Systems Architect, and the QA Lead. I identify the clinical bottleneck, model the biological logic, and build the patient-safety layer that turns raw data into decisions.
 
 I am the bridge between medicine and code. I don't just build prototypes; I build the deterministic safety gates that protect patients and reduce clinical liability.
 
@@ -140,12 +140,12 @@ I am the bridge between medicine and code. I don't just build prototypes; I buil
 
 <h2 style="color:#111827; font-weight:800; margin-top:1.5rem;">🚨 LEGAL DISCLAIMER & TERMS OF USE</h2>
 
-Not a Medical Device: The PGx Precision Dosing Engine is a software prototype designed to demonstrate the capabilities of deterministic Clinical Decision Support (CDS). It is not a medical device, doe[...]
+Not a Medical Device: The PGx Precision Dosing Engine is a software prototype designed to demonstrate the capabilities of deterministic Clinical Decision Support (CDS). It is not a medical device, does not provide medical advice, and is not intended to diagnose, treat, cure, or prevent any disease.
 
-No Substitute for Clinical Judgment: The outputs generated by this engine (including dosing calculations, warnings, and recommendations) are for informational purposes only. The engine does not autono[...]
+No Substitute for Clinical Judgment: The outputs generated by this engine (including dosing calculations, warnings, and recommendations) are for informational purposes only. The engine does not autonomously prescribe medication. A qualified, licensed healthcare professional must review all outputs and independently verify the clinical appropriateness of any recommendation before taking action.
 
-Regulatory Status: This software has not been cleared or approved by the US Food and Drug Administration (FDA) or any equivalent international regulatory authority (e.g., EMA, MHRA). It is currently a[...]
+Regulatory Status: This software has not been cleared or approved by the US Food and Drug Administration (FDA) or any equivalent international regulatory authority (e.g., EMA, MHRA). It is currently a non-commercial prototype intended for retrospective validation and research pilots.
 
-Limitation of Liability: The Architect (Sourabh Singh) assumes no liability for any clinical outcomes, adverse events, or damages arising from the use of, or reliance upon, the information or software[...]
+Limitation of Liability: The Architect (Sourabh Singh) assumes no liability for any clinical outcomes, adverse events, or damages arising from the use of, or reliance upon, the information or software described in this document.
 
-Data Privacy: The deployment architecture described herein utilizes a "Zero-Data-Retention" (Bring Your Own Data) model. The developer does not collect, store, or transmit any Protected Health Informa[...]
+Data Privacy: The deployment architecture described herein utilizes a "Zero-Data-Retention" (Bring Your Own Data) model. The developer does not collect, store, or transmit any Protected Health Information (PHI). Hospitals and clinics maintain full ownership and control of all patient data within their own secure environments.
