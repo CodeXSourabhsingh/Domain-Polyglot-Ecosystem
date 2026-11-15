@@ -50,6 +50,11 @@ The dashboard is designed for clinical researchers and data scientists.
 
 <img width="1920" height="914" alt="Screenshot 2026-11-14 201258" src="https://github.com/user-attachments/assets/b974cfde-f08d-4883-85c8-26aa18bfc570" />
 
+<img width="1905" height="710" alt="Screenshot 2026-11-14 201421" src="https://github.com/user-attachments/assets/18aaa8ee-fac7-4e93-ad8c-87cabc9ae435" />
+
+<img width="1920" height="737" alt="Screenshot 2026-11-14 201432" src="https://github.com/user-attachments/assets/10922164-a9fc-480e-8614-df9e85171ccd" />
+
+
 ## 5. Extreme Scale: The 2-Billion Patient Stress Test
 
 To prove it is production-grade, we did not just test it on 100 patients. We pushed it to the absolute limit.
