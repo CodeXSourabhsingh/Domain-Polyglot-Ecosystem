@@ -1,5 +1,4 @@
 # BIJA & BIJA-X — Clinical Fertility & Genomic Orchestrator
-
 <p align="center">
   <img src="https://img.shields.io/badge/FastAPI-0d9488?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
@@ -10,7 +9,6 @@
 </p>
 
 <p align="center">
-
 **Deterministic ART Triage and Mendelian Safety Gates.**
 
 ## 1. The Problem: The Fertility Blindspot
