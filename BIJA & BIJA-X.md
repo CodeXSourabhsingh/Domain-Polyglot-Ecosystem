@@ -101,12 +101,6 @@ Our regulatory philosophy: Explainable, Deterministic, and Accountable.
 
 Sourabh Singh — Founder & Lead Systems Architect
 
-I am a 20-year-old self-taught Systems Architect and a 4-0 amateur MMA fighter (Lightweight).
-
-I am a 3x NEET candidate. I cleared the cutoff for a private medical college, but I refused to buy my way in. I wanted to earn it, but I was training for MMA fights at the same time, which kept me from the government college cutoff.
-
-Instead of crying about the legacy system, I realized the medical field didn't just need more doctors—it needed better software architecture. So I taught myself Python, FastAPI, and React.
-
 I am not just a developer; I am a one-man clinical engineering department. I identify the clinical bottleneck, model the biological logic, and build the patient-safety layer that turns raw data into decisions.
 
 ## Final Statement
