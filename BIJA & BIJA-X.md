@@ -1,22 +1,22 @@
-**BIJA & BIJA-X — Clinical Fertility & Genomic Orchestrator**
+# BIJA & BIJA-X — Clinical Fertility & Genomic Orchestrator
 
 **Deterministic ART Triage and Mendelian Safety Gates.**
 
-**1. The Problem: The Fertility Blindspot**
+## 1. The Problem: The Fertility Blindspot
 
 Standard fertility protocols fail in two critical areas:
 
 1. Data Silos: Patients are forced to Google their AMH and FSH levels at 2 AM, while doctors spend 15 minutes of every consultation explaining basic triage.
 2. Silent Genetic Carriers: Two healthy parents can both be carriers of a severe autosomal recessive disease (like Cystic Fibrosis). Standard IUI proceeds blindly, resulting in a 25% chance of passing[...]
 
-**2. The Solution: A Two-Tier Clinical Engine**
+## 2. The Solution: A Two-Tier Clinical Engine
 
 BIJA is a full-stack clinical platform split into two distinct modules:
 
 · Base BIJA (The Triage Layer): A patient-facing education and calculation tool that ingests WHO semen analysis and ASRM endocrine panels to map the correct ART pathway (IUI, IVF, ICSI).
 · BIJA-X (The Genomic Layer): A doctor-facing safety gate. When a Mendelian mutation is detected, BIJA-X overrides standard ART and forces Preimplantation Genetic Testing (PGT-M).
 
-**3. Clinical Deep Dive: The Base BIJA Triage**
+## 3. Clinical Deep Dive: The Base BIJA Triage
 
 Base BIJA uses deterministic logic to navigate the 6 ART Branches:
 
@@ -38,7 +38,7 @@ The Clinical Guidelines Used:
 
 <img width="1920" height="904" alt="Screenshot 2026-11-14 004603" src="https://github.com/user-attachments/assets/62919691-ef96-48ee-afca-08e1cf5768b4" />
 
-**4. Clinical Deep Dive: The BIJA-X Mendelian Layer**
+## 4. Clinical Deep Dive: The BIJA-X Mendelian Layer
 
 Unlike black-box AI, BIJA-X uses hardcoded Mendelian inheritance rules to dictate the clinical strategy.
 
@@ -49,13 +49,13 @@ Unlike black-box AI, BIJA-X uses hardcoded Mendelian inheritance rules to dictat
 
 <img width="1903" height="919" alt="Screenshot 2026-11-15 122718" src="https://github.com/user-attachments/assets/5befd951-9d39-4c50-babd-5aa2ebdfe294" />
 
-<img width="1900" height="884" alt="Screenshot 2026-11-15 123023" src="https://github.com/user-attachments/assets/c0556f2f-1a0a-45ee-b2b0-9283ffa46537" />
+<img width="1900" height="884" alt="Screenshot 2026-11-15 123023" src="https://github.com/user-attachments/assets/5c0556f2-1a0a-45ee-b2b0-9283ffa46537" />
 
 <img width="1920" height="902" alt="Screenshot 2026-11-15 123043" src="https://github.com/user-attachments/assets/f9c1e99a-495f-4143-8022-bbdc4c67532b" />
 
 <img width="1920" height="879" alt="Screenshot 2026-11-15 123119" src="https://github.com/user-attachments/assets/a137925d-4494-4b56-86f8-b158ec217f50" />
 
-**5. Enterprise Architecture**
+## 5. Enterprise Architecture
 
 This is not a toy script. It is a production-grade architecture built for clinic evaluation.
 
@@ -63,7 +63,7 @@ This is not a toy script. It is a production-grade architecture built for clinic
 · The Bouncer (Pydantic): Strict input validation prevents impossible data (e.g., negative AMH) from reaching the math engine.
 · The Frontend: React + Tailwind CSS, with real-time Recharts visualizations mapping the patient's hormones against normal clinical ranges.
 
-**6. Extreme Stress Testing**
+## 6. Extreme Stress Testing
 
 To prove it is production-grade, we engineered a hostile Pytest suite to break the engine.
 
@@ -73,21 +73,21 @@ To prove it is production-grade, we engineered a hostile Pytest suite to break t
 
 <img width="1920" height="690" alt="Screenshot 2026-11-15 123632" src="https://github.com/user-attachments/assets/f20742b0-02e0-4277-97da-f2a7c84cea8e" />
 
-**7. The Ecosystem Roadmap: Node 2 Vision**
+## 7. The Ecosystem Roadmap: Node 2 Vision
 
 While the current BIJA-X engine is a lightweight, pure-logic decision gate, it is built to scale into a massive Genomic Orchestrator.
 
 · Phase 2 (The Mutation Trail): In future enterprise deployments, BIJA-X will integrate with NCBI, PDB, and ChEMBL APIs to fetch live DNA sequences, predict protein destabilization, and check drug in[...]
 · The Clinical Compiler: BIJA is Node 2 of a massive ecosystem. Node 1 is the PGx Warfarin engine. Together, they prove the architecture can merge Fertility, Pharmacology, and Genetics into a single [...]
 
-**8. Regulatory Strategy: CDS vs. SaMD**
+## 8. Regulatory Strategy: CDS vs. SaMD
 
 Our regulatory philosophy: Explainable, Deterministic, and Accountable.
 
 · Clinical Decision Support (CDS): Under the 21st Century Cures Act, BIJA is strictly classified as a CDS tool. It does not autonomously prescribe or perform embryo transfers.
 · Defensible Audit Trail: Because our logic is hardcoded to Mendelian inheritance patterns and WHO guidelines, it is fully explainable.
 
-**9. About the Architect**
+## 9. About the Architect
 
 Sourabh Singh — Founder & Lead Systems Architect
 
@@ -99,12 +99,12 @@ Instead of crying about the legacy system, I realized the medical field didn't j
 
 I am not just a developer; I am a one-man clinical engineering department. I identify the clinical bottleneck, model the biological logic, and build the patient-safety layer that turns raw data into d[...]
 
-**Final Statement**
+## Final Statement
 BIJA is not just a fertility calculator. It is a clinical safety engine built to prevent genetic disease transmission, detect unsafe patients before ART initiation, and convert fragmented biomedical s[...]
 
 ---
 
-**🚨 LEGAL DISCLAIMER & TERMS OF USE**
+## 🚨 LEGAL DISCLAIMER & TERMS OF USE
 
 Not a Medical Device: The BIJA / BIJA-X Engine is a software prototype designed to demonstrate the capabilities of deterministic Clinical Decision Support (CDS). It is not a medical device, does not p[...]
 
