@@ -49,6 +49,8 @@ Unlike black-box AI, BIJA-X uses hardcoded Mendelian inheritance rules to dictat
 
 <img width="1903" height="919" alt="Screenshot 2026-11-15 122718" src="https://github.com/user-attachments/assets/5befd951-9d39-4c50-babd-5aa2ebdfe294" />
 
+<img width="1900" height="884" alt="Screenshot 2026-11-15 123023" src="https://github.com/user-attachments/assets/7c0f7b39-9da4-447d-8d01-ffb0755ca6a0" />
+
 <img width="1900" height="884" alt="Screenshot 2026-11-15 123023" src="https://github.com/user-attachments/assets/5c0556f2-1a0a-45ee-b2b0-9283ffa46537" />
 
 <img width="1920" height="902" alt="Screenshot 2026-11-15 123043" src="https://github.com/user-attachments/assets/f9c1e99a-495f-4143-8022-bbdc4c67532b" />
@@ -91,11 +93,7 @@ Our regulatory philosophy: Explainable, Deterministic, and Accountable.
 
 Sourabh Singh — Founder & Lead Systems Architect
 
-I am a 20-year-old self-taught Systems Architect and a 4-0 amateur MMA fighter (Lightweight).
-
-I am a 3x NEET candidate. I cleared the cutoff for a private medical college, but I refused to buy my way in. I wanted to earn it, but I was training for MMA fights at the same time, which kept me from the government college cutoff.
-
-Instead of crying about the legacy system, I realized the medical field didn't just need more doctors—it needed better software architecture. So I taught myself Python, FastAPI, and React.
+I am a 20-year-old self-taught Systems Architect 
 
 I am not just a developer; I am a one-man clinical engineering department. I identify the clinical bottleneck, model the biological logic, and build the patient-safety layer that turns raw data into decisions.
 
