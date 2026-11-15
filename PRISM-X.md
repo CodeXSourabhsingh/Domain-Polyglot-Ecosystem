@@ -1,5 +1,6 @@
 # PRISM-X — Universal Genomic Outlier Engine
 
+
 <p align="center">
   <img src="https://img.shields.io/badge/FastAPI-0d9488?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
@@ -11,7 +12,9 @@
 
 <p align="center">
 
+
 Deterministic statistical anomaly detection at planetary scale.
+
 
 ## 1. The Problem: The Data Deluge & The AI Hallucination
 
