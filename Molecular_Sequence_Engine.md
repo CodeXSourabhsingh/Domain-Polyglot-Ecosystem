@@ -173,6 +173,6 @@ Tests are split into three groups.
 **Sourabh singh.** 
 
 - **Focus:** verified calculations, honest documentation, and tests that check real data.
-- **Contact:** `[your email or LinkedIn]`
+- **Contact:** `[https://www.linkedin.com/in/sourabh-singh-7b1249434/]`
 
 Research use only. Outputs are calculations and flags for expert review, not clinical decisions.
