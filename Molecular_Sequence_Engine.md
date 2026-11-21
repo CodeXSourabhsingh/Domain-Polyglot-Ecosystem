@@ -136,12 +136,14 @@ This is a small, careful service, not a script.
 
 ## 5. Extreme Stress Testing
 
-Tests are split into two groups.
+Tests are split into three groups.
 
 <img width="1912" height="508" alt="Screenshot 2026-11-20 105931" src="https://github.com/user-attachments/assets/6475e4c1-b8b3-4250-a7b4-be7377f3a9d2" />
 
+<img width="1915" height="466" alt="Screenshot 2026-11-20 113758" src="https://github.com/user-attachments/assets/ab05179c-315b-4a58-a40d-6ffa46a4f350" />
 
-<img width="1912" height="508" alt="Screenshot 2026-11-20 105931" src="https://github.com/user-attachments/assets/510f7ec6-c0c5-404c-a41d-642e7cf9c574" />
+<img width="1292" height="859" alt="WhatsApp Image 2026-11-21 at 9 14 04 AM" src="https://github.com/user-attachments/assets/4ef49f84-f998-4002-b9e8-478e86502386" />
+
 
 ---
 
